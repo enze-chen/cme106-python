@@ -11,7 +11,7 @@ You can open an issue on GitHub ({fa}`lightbulb`) or email Enze (`enze@`).
 
 
 This Jupyter Book contains a series of Python exercises aimed at introducing you to scientific computing in the context of [CME 106: Introduction to Probability and Statistics for Engineers](https://explorecourses.stanford.edu/search?q=cme106+statistics) at [Stanford University](https://www.stanford.edu/).
-The exercises are adapted from the MATLAB Workbook by [Vadim Khayms](https://icme.stanford.edu/people/vadim-khayms), Senior Lecturer in Mechanical Engineering, and created by [Enze Chen](https://mse.stanford.edu/people/enze-chen).
+The exercises are adapted from the MATLAB Workbook by [Vadim Khayms](https://icme.stanford.edu/people/vadim-khayms), Senior Lecturer in Mechanical Engineering, and created by [Enze Chen](https://mse.stanford.edu/people/enze-chen), Lecturer in Materials Science and Engineering.
 We hope students will find these exercises useful in their studies!
 
 
@@ -22,7 +22,6 @@ You will not be rewarded for both, though you're welcome to do both for practice
 These pages only have Python, corresponding to the exercises in the original MATLAB Workbook.
 ```
 
-{fa}`chevron-down`
 
 
 ## Other FAQs

@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Saving your work - Your turn &#8212; CME 106 Python Workbook</title>
+    <title>Regression and correlation analyses - Your turn &#8212; CME 106 Python Workbook</title>
   
   
   
@@ -57,6 +57,8 @@
     <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'workbook/5_regression_blank';</script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <link rel="canonical" href="https://enze-chen.github.io/cme106-python/workbook/5_regression_blank.html" />
@@ -395,7 +397,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Saving your work - Your turn</h1>
+    <h1>Regression and correlation analyses - Your turn</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -405,6 +407,12 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#part-1">Part 1</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#todo-write-your-explanation-below">TODO: Write your explanation below</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#part-2">Part 2</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#part-3">Part 3</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exporting-your-work">Exporting your work</a></li>
 </ul>
             </nav>
@@ -417,8 +425,8 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="saving-your-work-your-turn">
-<h1>Saving your work - Your turn<a class="headerlink" href="#saving-your-work-your-turn" title="Link to this heading">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="regression-and-correlation-analyses-your-turn">
+<h1>Regression and correlation analyses - Your turn<a class="headerlink" href="#regression-and-correlation-analyses-your-turn" title="Link to this heading">#</a></h1>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Click the <span class="fa fa-rocket"></span> and open this notebook in Colab to enable interactivity.</p>
@@ -427,15 +435,162 @@ document.write(`
 <p class="admonition-title">Note</p>
 <p>To save your progress, make a copy of this notebook in Colab <code class="docutils literal notranslate"><span class="pre">File</span> <span class="pre">&gt;</span> <span class="pre">Save</span> <span class="pre">a</span> <span class="pre">copy</span></code> and you’ll find it in <code class="docutils literal notranslate"><span class="pre">My</span> <span class="pre">Drive</span> <span class="pre">&gt;</span> <span class="pre">Colab</span> <span class="pre">Notebooks</span></code>.</p>
 </div>
-<p>In the code cell below, compute the product of all the integers from 1 to 9.
-Make sure the output is visible!</p>
+<p>Note there are three parts!</p>
+<section id="part-1">
+<h2>Part 1<a class="headerlink" href="#part-1" title="Link to this heading">#</a></h2>
+<p>The voltage-current characteristic of a newly developed non-linear electronic device is thought to be a polynomial.
+A set of measurements was performed to estimate the regression coefficients.
+The measurements of the voltage and current are provided in the table below.</p>
+<ol class="arabic simple">
+<li><p>Determine the regression coefficients.</p></li>
+<li><p>State the degree of the polynomial and the reason you chose this polynomial.</p></li>
+<li><p>Plot on the same set of axes the current-voltage data and the polynomial curve fit.</p></li>
+</ol>
+<p><em>Hint</em>: Try out polynomials of different degrees.</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head text-center"><p><span class="math notranslate nohighlight">\(V\)</span> (volts)</p></th>
+<th class="head text-center"><p><span class="math notranslate nohighlight">\(I\)</span> (Amps)</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-center"><p>1</p></td>
+<td class="text-center"><p>0.3</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p>2</p></td>
+<td class="text-center"><p>3.5</p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p>3</p></td>
+<td class="text-center"><p>12</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p>4</p></td>
+<td class="text-center"><p>20</p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p>5</p></td>
+<td class="text-center"><p>29</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p>6</p></td>
+<td class="text-center"><p>43</p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p>7</p></td>
+<td class="text-center"><p>55</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p>8</p></td>
+<td class="text-center"><p>75</p></td>
+</tr>
+</tbody>
+</table>
+</div>
 <div class="cell tag_remove-output docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># TODO: Write your solution below</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># TODO: Write your code below</span>
 </pre></div>
 </div>
 </div>
 </div>
+<section id="todo-write-your-explanation-below">
+<h3>TODO: Write your explanation below<a class="headerlink" href="#todo-write-your-explanation-below" title="Link to this heading">#</a></h3>
+</section>
+</section>
+<section id="part-2">
+<h2>Part 2<a class="headerlink" href="#part-2" title="Link to this heading">#</a></h2>
+<p>Calculate a <span class="math notranslate nohighlight">\(50\%\)</span> confidence interval for future prediction for the polynomial, and plot the data and curve again with the confidence interval included.</p>
+<p>Note: In MATLAB, the <a class="reference external" href="https://www.mathworks.com/help/matlab/ref/polyval.html"><code class="docutils literal notranslate"><span class="pre">polyval()</span></code></a> function implements this in a straightforward way.
+In Python, we again have to work for our meal, and presently, we cannot seem to replicate the <code class="docutils literal notranslate"><span class="pre">delta</span></code> calculation, so below we have a custom implementation following the formalism presented <a class="reference external" href="https://online.stat.psu.edu/stat501/lesson/3/3.2">here</a>.
+We will use the <a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.t.html">Student’s <span class="math notranslate nohighlight">\(t\)</span> distribution</a> implemented in SciPy.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">scipy.stats</span><span class="w"> </span><span class="kn">import</span> <span class="n">t</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">polyval_with_margin</span><span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">x0</span><span class="p">,</span> <span class="n">mse</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.05</span><span class="p">,</span> <span class="n">interval</span><span class="o">=</span><span class="s1">&#39;confidence&#39;</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Args:</span>
+<span class="sd">        p - NumPy fitted polynomial</span>
+<span class="sd">        x - new x values to make predictions for</span>
+<span class="sd">        x0 - old x values to estimate error</span>
+<span class="sd">        mse - the fitted (training) error</span>
+<span class="sd">        alpha - significance level</span>
+<span class="sd">        interval - confidence or prediction interval</span>
+<span class="sd">    Returns:</span>
+<span class="sd">        y_pred - predicted y values for the given x</span>
+<span class="sd">        margins - the uncertainty = t-stat * SE</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="c1"># get predictions</span>
+    <span class="n">y_pred</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">polyval</span><span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>
+    <span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">x0</span><span class="p">)</span>
+
+    <span class="c1"># calculate the standard error</span>
+    <span class="n">ssx</span> <span class="o">=</span> <span class="p">(</span><span class="n">x</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">x0</span><span class="p">))</span><span class="o">**</span><span class="mi">2</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">((</span><span class="n">x0</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">x0</span><span class="p">))</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">interval</span> <span class="o">==</span> <span class="s1">&#39;prediction&#39;</span><span class="p">:</span>
+        <span class="n">Se_pred</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">mse</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="mi">1</span><span class="o">/</span><span class="n">n</span> <span class="o">+</span> <span class="n">ssx</span><span class="p">))</span>
+    <span class="k">elif</span> <span class="n">interval</span> <span class="o">==</span> <span class="s1">&#39;confidence&#39;</span><span class="p">:</span>
+        <span class="n">Se_pred</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">mse</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="n">n</span> <span class="o">+</span> <span class="n">ssx</span><span class="p">))</span>
+
+    <span class="c1"># calculate margin of error</span>
+    <span class="n">dof</span> <span class="o">=</span> <span class="n">n</span> <span class="o">-</span> <span class="mi">2</span>
+    <span class="n">t_stat</span> <span class="o">=</span> <span class="n">t</span><span class="o">.</span><span class="n">ppf</span><span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">alpha</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="n">df</span><span class="o">=</span><span class="n">dof</span><span class="p">)</span>
+    <span class="n">margin</span> <span class="o">=</span> <span class="n">t_stat</span> <span class="o">*</span> <span class="n">Se_pred</span>
+
+    <span class="k">return</span> <span class="n">y_pred</span><span class="p">,</span> <span class="n">margin</span>
+
+<span class="c1"># TODO: Write your code below</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="part-3">
+<h2>Part 3<a class="headerlink" href="#part-3" title="Link to this heading">#</a></h2>
+<p>A company’s production volume is thought to depend on its raw material intake up to the fourth power:</p>
+<div class="math notranslate nohighlight">
+\[ P = c_0 + c_1M + c_2M^2 + c_3M^3 + c_4M^4 \]</div>
+<p>The measurements of the production volume in different months are given below, along with the raw material intake for that month.
+Determine the coefficients for the model.
+Also determine the correlation coefficient between the production volume and the raw material quantity.</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head text-center"><p><span class="math notranslate nohighlight">\(M\)</span> (raw material in tons)</p></th>
+<th class="head text-center"><p><span class="math notranslate nohighlight">\(P\)</span> (production volume in tons)</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-center"><p>1.82</p></td>
+<td class="text-center"><p>0.9267</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p>1.40</p></td>
+<td class="text-center"><p>0.6245</p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p>2.93</p></td>
+<td class="text-center"><p>2.1614</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p>1.36</p></td>
+<td class="text-center"><p>0.5999</p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p>1.52</p></td>
+<td class="text-center"><p>0.7026</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p>1.45</p></td>
+<td class="text-center"><p>0.6563</p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p>1.92</p></td>
+<td class="text-center"><p>1.0110</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p>1.81</p></td>
+<td class="text-center"><p>0.9185</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># TODO: Write your code below</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
 <section id="exporting-your-work">
 <h2>Exporting your work<a class="headerlink" href="#exporting-your-work" title="Link to this heading">#</a></h2>
 <p>When you’re ready, the easiest way to export the notebook is to <code class="docutils literal notranslate"><span class="pre">File</span> <span class="pre">&gt;</span> <span class="pre">Print</span></code> it and save it as a PDF.
@@ -508,6 +663,12 @@ Obviously don’t obscure any necessary output or graphs!</p>
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#part-1">Part 1</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#todo-write-your-explanation-below">TODO: Write your explanation below</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#part-2">Part 2</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#part-3">Part 3</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exporting-your-work">Exporting your work</a></li>
 </ul>
   </nav></div>
