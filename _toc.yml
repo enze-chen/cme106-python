@@ -1,0 +1,39 @@
+# Table of contents. Learn more at https://jupyterbook.org/customize/toc.html
+format: jb-book
+root: intro
+parts:
+  - chapters:
+    - file: workbook/0_usage
+
+  - caption: Chapters
+    numbered: 1
+    chapters:
+    - file: workbook/1_random_demo
+      sections: 
+      - file: workbook/1_random_blank
+        title: Your turn
+
+    - file: workbook/2_probability_demo
+      sections: 
+      - file: workbook/2_probability_blank
+        title: Your turn
+
+    - file: workbook/3_parameter_demo
+      sections: 
+      - file: workbook/3_parameter_blank
+        title: Your turn
+
+    - file: workbook/4_hypothesis_demo
+      sections: 
+      - file: workbook/4_hypothesis_blank
+        title: Your turn
+
+    - file: workbook/5_regression_demo
+      sections: 
+      - file: workbook/5_regression_blank
+        title: Your turn
+
+  - caption: Appendix
+    numbered: false
+    chapters:
+    - file: tutorials/1_fund-python_blank

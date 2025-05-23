@@ -1,0 +1,13 @@
+# Jupyter book
+_build/
+workbook/*.pdf
+tutorials/*.pdf
+
+# Jupyter notebook
+__pycache__
+**.egg-info
+**.ipynb_checkpoints
+.DS_Store
+**_solu.ipynb
+
+# Other
