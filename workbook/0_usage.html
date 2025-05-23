@@ -1,0 +1,719 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Usage tips &#8212; CME 106 Python Workbook</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'workbook/0_usage';</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <link rel="canonical" href="https://enze-chen.github.io/cme106-python/workbook/0_usage.html" />
+    <link rel="icon" href="../_static/stanford-s.png"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="1. Random number generation" href="1_random_demo.html" />
+    <link rel="prev" title="CME 106 Python Workbook" href="../intro.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/icme-logo.png" class="logo__image only-light" alt="CME 106 Python Workbook - Home"/>
+    <script>document.write(`<img src="../_static/icme-logo.png" class="logo__image only-dark" alt="CME 106 Python Workbook - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    CME 106 Python Workbook
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Usage tips</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Chapters</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="1_random_demo.html">1. Random number generation</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="1_random_blank.html">Your turn</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="2_probability_demo.html">2. Probability distributions</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="2_probability_blank.html">Your turn</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="3_parameter_demo.html">3. Parameter estimation</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="3_parameter_blank.html">Your turn</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="4_hypothesis_demo.html">4. Hypothesis testing</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="4_hypothesis_blank.html">Your turn</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="5_regression_demo.html">5. Regression and correlation analyses</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="5_regression_blank.html">Your turn</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Appendix</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/1_fund-python_blank.html">Python fundamentals</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://colab.research.google.com/github/enze-chen/cme106-python/blob/main/workbook/0_usage.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch on Colab"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img alt="Colab logo" src="../_static/images/logo_colab.png">
+  </span>
+<span class="btn__text-container">Colab</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+<a href="https://github.com/enze-chen/cme106-python/issues/new?title=Issue%20on%20page%20%2Fworkbook/0_usage.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button"
+   title="Open an issue"
+   data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+
+</a>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/workbook/0_usage.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Usage tips</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#navigating-the-book">Navigating the book</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#interactivity">Interactivity</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#why-python">Why Python? 🐍</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#launching-colab">Launching Colab</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#running-a-jupyter-notebook">Running a Jupyter notebook</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#markdown-cells">Markdown cells</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#code-cells">Code cells</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#saving-your-work">Saving your work</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#uploading-and-downloading-data">Uploading and downloading data</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#getting-help">Getting help</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#vibe-coding-and-the-illusion-of-explanatory-depth">Vibe coding and the illusion of explanatory depth</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exporting-your-work">Exporting your work</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusion">Conclusion</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="usage-tips">
+<h1>Usage tips<a class="headerlink" href="#usage-tips" title="Link to this heading">#</a></h1>
+<p>This document/website that you’re reading right now is created using <a class="reference external" href="https://jupyterbook.org/en/stable/intro.html">Jupyter Book</a>.
+Here, we will take a moment to explain the UI to help you get the most out of the experience.</p>
+<section id="navigating-the-book">
+<h2>Navigating the book<a class="headerlink" href="#navigating-the-book" title="Link to this heading">#</a></h2>
+<p>For the most part, you can use the navigation panel on the left to jump quickly to the exercise you’re interested in.
+Each top-level header contains some explanations and a code demo, and nested underneath (click the down chevron <span class="fa fa-chevron-down"></span>), is a “Your turn” notebook for you to complete and submit.</p>
+<!-- ````{margin}
+```{tip}
+Even though there's no Jupyter Book for your homework, you can always create a new Colab notebook (from Google Drive) and write Python code there to solve your problems!
+```
+```` -->
+<p>Note that ordinarily, to run Python on your computer requires installing a Python interpreter, a bunch of extra packages, and a text editor or an integrated development environment (IDE) to work in.
+This can be complicated, so instead we’re going to run everything in the cloud using <a class="reference external" href="https://colab.google/">Google Colaboratory (Colab)</a>!</p>
+<aside class="sidebar">
+<p class="sidebar-title">The wonders of Python</p>
+<figure class="align-center" id="id1">
+<a class="reference internal image-reference" href="../_images/python_xkcd.png"><img alt="python_xkcd" src="../_images/python_xkcd.png" style="width: 100%;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Fig. 1 </span><span class="caption-text"><a class="reference external" href="https://xkcd.com/353/">xkcd 353</a>.</span><a class="headerlink" href="#id1" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</aside>
+</section>
+<section id="interactivity">
+<h2>Interactivity<a class="headerlink" href="#interactivity" title="Link to this heading">#</a></h2>
+<p>Several of the pages of this book are actually <strong>Jupyter notebooks</strong>, which provide interactive programming environments that interleave text, code, and graphics to provide hands-on learning experiences for students.
+On these pages, you will be able to <strong>run Python code in real time</strong>, both for the tutorials to learn the commands and for your actual homework exercises.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If you’ve ever used <a class="reference external" href="https://www.mathworks.com/products/matlab/live-editor.html">MATLAB Live Scripts</a>, this is basically the Python equivalent (not sure which came first).</p>
+</div>
+<section id="why-python">
+<h3>Why Python? 🐍<a class="headerlink" href="#why-python" title="Link to this heading">#</a></h3>
+<p>There are many programming languages one can choose from, and we eventually settled on Python as it has <a class="reference external" href="https://stackoverflow.blog/2017/09/06/incredible-growth-python/">skyrocketed in popularity</a> in recent years.
+This growth is in part due to:</p>
+<ol class="arabic simple">
+<li><p>Its <em>readability</em>. Python is designed to be simple and reads like English.</p></li>
+<li><p>Its <em>extensibility</em>. Python makes it easy for developers to write <em>modules</em> that extend its functionalities for applications in <a class="reference external" href="https://wesmckinney.com/book/">data science</a>, <a class="reference external" href="https://www.nature.com/articles/s41586-020-2649-2">scientific computing</a>, and <a class="reference external" href="https://twitter.com/ThePSF/status/1362516507918483458?s=20">flying drones on Mars</a>.</p></li>
+<li><p>Its <em>open-source</em> properties. This means anyone can contribute to Python development and anyone can use it—for free!</p></li>
+</ol>
+</section>
+<section id="launching-colab">
+<h3>Launching Colab<a class="headerlink" href="#launching-colab" title="Link to this heading">#</a></h3>
+<p>To launch any notebook in Google Colab, hover over the <span class="fa fa-rocket"></span> icon in the top-right corner, then <kbd>Ctrl</kbd>+click the button <span class="guilabel">∞ Colab</span> (open in new tab), and wait for the environment to load.
+Note that <em>not all pages are interactive</em>, and thus not all pages will have the rocket symbol.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>All of the top-level pages for each chapter, like <a class="reference internal" href="1_random_demo.html"><span class="doc">Random number generation</span></a>, are interactive, so if you want to run and modify the example code yourself, you can!</p>
+</div>
+<div class="admonition attention">
+<p class="admonition-title">Attention</p>
+<p><strong>Try it now</strong> by clicking on the <span class="fa fa-rocket"></span> for this page and read the rest of the page in Colab!</p>
+</div>
+</section>
+<section id="running-a-jupyter-notebook">
+<h3>Running a Jupyter notebook<a class="headerlink" href="#running-a-jupyter-notebook" title="Link to this heading">#</a></h3>
+<p>The information in Jupyter notebooks is organized into <strong>cells</strong>, which come in many forms.</p>
+<section id="markdown-cells">
+<h4>Markdown cells<a class="headerlink" href="#markdown-cells" title="Link to this heading">#</a></h4>
+<p>This cell is called a <strong>Markdown cell</strong>, which is used for text/media that can be formatted with the <a class="reference external" href="https://www.markdownguide.org/">Markdown</a> markup language.
+You know this is a Markdown cell because there is a white background and no ▶️ on the left side when you’ve selected the cell.
+If you double-click a Markdown cell, you can edit it; press <kbd>Shift</kbd>+<kbd>Enter</kbd> to save your edits and exit the cell.</p>
+</section>
+<section id="code-cells">
+<h4>Code cells<a class="headerlink" href="#code-cells" title="Link to this heading">#</a></h4>
+<p>Notice how the next cell looks a little different.
+It is a <strong>code cell</strong>, which allows you to write Python code and then <strong>execute the code</strong> with <kbd>Shift</kbd>+<kbd>Enter</kbd>.
+Or you can click the <kbd>▶ Run</kbd> button on the left side to execute the code.</p>
+<p><strong>Quick exercise:</strong> In the space below, enter your name between the quotation marks and then run the code cell by pressing <kbd>Shift</kbd>+<kbd>Enter</kbd>.</p>
+<div class="cell tag_remove-output docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># inline comments in Python start with &quot;#&quot;</span>
+<span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>          <span class="c1"># enter your name here as a string, enclosed by quotes</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Hello, </span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s1">!&#39;</span><span class="p">)</span>  
+</pre></div>
+</div>
+</div>
+</div>
+<p>You should see some output and a number appear between the square brackets!
+(e.g., <code class="docutils literal notranslate"><span class="pre">In</span> <span class="pre">[1]:</span></code>)
+This number indicates the sequence of code cell execution, which can be handy for a few reasons:</p>
+<ul class="simple">
+<li><p>You can clearly tell which cells have been executed and which cells have not.</p></li>
+<li><p>You can split code among several code blocks and run them in whatever order you want.</p></li>
+<li><p>You can easily change an earlier code cell and rerun it.</p></li>
+</ul>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>We hope you caught that!
+Use <code class="docutils literal notranslate"><span class="pre">Shift</span></code>+<code class="docutils literal notranslate"><span class="pre">Enter</span></code> to execute the cells!
+Either to run code or save any Markdown text that you’ve edited.</p>
+</div>
+</section>
+</section>
+<section id="saving-your-work">
+<h3>Saving your work<a class="headerlink" href="#saving-your-work" title="Link to this heading">#</a></h3>
+<p>Unfortunately, if you close Colab (or even disconnect from the runtime environment), your work won’t be saved.
+To save your own copy of this page, you should <strong>make a copy of this notebook</strong> by going to <code class="docutils literal notranslate"><span class="pre">File</span> <span class="pre">&gt;</span> <span class="pre">Save</span> <span class="pre">a</span> <span class="pre">copy</span> <span class="pre">in</span> <span class="pre">Drive</span></code>.
+You’ll find it in the folder <code class="docutils literal notranslate"><span class="pre">My</span> <span class="pre">Drive</span> <span class="pre">&gt;</span> <span class="pre">Colab</span> <span class="pre">Notebooks</span></code>, and you’re welcome to move it elsewhere.
+This allows you to save and return to the notebook with your edits preserved.</p>
+</section>
+<section id="uploading-and-downloading-data">
+<h3>Uploading and downloading data<a class="headerlink" href="#uploading-and-downloading-data" title="Link to this heading">#</a></h3>
+<p>After you’ve copied the notebook, you can upload any files to your Colab workspace by dragging it into the empty space in the Files tab (📁) on the left side (<a class="reference external" href="https://youtu.be/WrOBVktG1Fs">YouTube tutorial</a>).
+It will warn you that the file will disappear if the runtime disconnects.
+That’s OK, you can always upload it again.</p>
+<p>If your code generates any files (like a saved PNG image), it will also appear in the sidebar where you can download it to your computer.</p>
+</section>
+</section>
+<section id="getting-help">
+<h2>Getting help<a class="headerlink" href="#getting-help" title="Link to this heading">#</a></h2>
+<p>We would be remiss not to mention that, in addition to your instructors and peers, generative AI is a great tool to help with generating code, learning its structure/syntax, and debugging!
+You can ask questions about parts that are unclear or directly copy-paste any error messages to help you resolve it.
+Try it for free on the <a class="reference external" href="https://aiplayground-prod.stanford.edu/">Stanford AI Playground</a>!</p>
+<section id="vibe-coding-and-the-illusion-of-explanatory-depth">
+<h3><a class="reference external" href="https://x.com/karpathy/status/1886192184808149383">Vibe coding</a> and the <a class="reference external" href="https://en.wikipedia.org/wiki/Illusion_of_explanatory_depth">illusion of explanatory depth</a><a class="headerlink" href="#vibe-coding-and-the-illusion-of-explanatory-depth" title="Link to this heading">#</a></h3>
+<p>That being said, you should not be overly dependent on the code that AI produces, at least not to the point where you cannot interpret it and can only hope it is 100% correct.
+It is true that AI will probably get all of the exercises correct and in the future a lot of the code we write will be AI produced.
+But in order to identify errors/gaps and fine tune things—heck, even just being able to <em>read</em> code—requires some fundamental skills on your part, and that’s what we hope these exercise will help you foster.
+We encourage you to double check your understanding of every line of code, just so you’re not fooling yourself!</p>
+</section>
+</section>
+<section id="exporting-your-work">
+<h2>Exporting your work<a class="headerlink" href="#exporting-your-work" title="Link to this heading">#</a></h2>
+<p>When you’re ready, the easiest way to export the notebook is to <code class="docutils literal notranslate"><span class="pre">File</span> <span class="pre">&gt;</span> <span class="pre">Print</span></code> it and save it as a PDF.
+Remove any excessively long, unrelated outputs first by clicking the arrow → next to the output box and then <code class="docutils literal notranslate"><span class="pre">Show/hide</span> <span class="pre">output</span></code>.
+Obviously don’t obscure any necessary output or graphs!</p>
+</section>
+<section id="conclusion">
+<h2>Conclusion<a class="headerlink" href="#conclusion" title="Link to this heading">#</a></h2>
+<p>This completes our introduction to the Jupyter Book interface.
+You’re ready to start with <a class="reference internal" href="1_random_demo.html"><span class="doc std std-doc">Exercise 1</span></a>!</p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./workbook"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../intro.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">CME 106 Python Workbook</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="1_random_demo.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><span class="section-number">1. </span>Random number generation</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#navigating-the-book">Navigating the book</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#interactivity">Interactivity</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#why-python">Why Python? 🐍</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#launching-colab">Launching Colab</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#running-a-jupyter-notebook">Running a Jupyter notebook</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#markdown-cells">Markdown cells</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#code-cells">Code cells</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#saving-your-work">Saving your work</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#uploading-and-downloading-data">Uploading and downloading data</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#getting-help">Getting help</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#vibe-coding-and-the-illusion-of-explanatory-depth">Vibe coding and the illusion of explanatory depth</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exporting-your-work">Exporting your work</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusion">Conclusion</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Enze Chen and Vadim Khayms
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2025.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+<div class="extra_footer">
+  <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">
+  <img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/80x15.png" />
+</a>
+
+</div>
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
