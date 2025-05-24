@@ -422,6 +422,7 @@ document.write(`
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#scientific-computing-with-numpy">3. Scientific computing with NumPy</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#d-arrays-i-e-matrices">2D arrays, i.e., matrices</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#helper-functions">Helper functions</a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#i-want-exactly-n-equally-spaced-values">I want exactly <span class="math notranslate nohighlight">\(N\)</span> equally spaced values</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#i-want-values-equally-spaced-by-delta">I want values equally spaced by <span class="math notranslate nohighlight">\(\delta\)</span></a></li>
@@ -884,6 +885,40 @@ We will import NumPy and then convert the list from above to a NumPy array using
 </div>
 </div>
 </div>
+<section id="d-arrays-i-e-matrices">
+<h3>2D arrays, i.e., matrices<a class="headerlink" href="#d-arrays-i-e-matrices" title="Link to this heading">#</a></h3>
+<p>To create a 2D NumPy array (or <span class="math notranslate nohighlight">\(N\)</span>-dimensional), you can construct it from a list of lists, as follows:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="n">list2</span> <span class="o">=</span> <span class="p">[</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">]</span> <span class="p">]</span>
+<span class="n">arr</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">list2</span><span class="p">)</span>
+<span class="n">arr</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[1, 2, 3],
+       [4, 5, 6]])
+</pre></div>
+</div>
+</div>
+</div>
+<p>Indexing into a 2D array requires commas separating the different axes (row first, then column).
+Recall that arrays are 0-indexed in Python!</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">arr</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2
+</pre></div>
+</div>
+</div>
+</div>
+</section>
 <section id="helper-functions">
 <h3>Helper functions<a class="headerlink" href="#helper-functions" title="Link to this heading">#</a></h3>
 <p>Creating vectors manually isn’t bad when there are only a few elements, but it would be quite annoying if you had dozens or hundreds of entries!
@@ -1030,7 +1065,7 @@ Using the same operators could generate errors or incorrect behavior.</p>
 </div>
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">22</span><span class="p">],</span> <span class="n">line</span> <span class="mi">11</span>
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">24</span><span class="p">],</span> <span class="n">line</span> <span class="mi">11</span>
 <span class="g g-Whitespace">      </span><span class="mi">8</span> <span class="nb">print</span><span class="p">(</span><span class="n">zl</span><span class="p">)</span>
 <span class="g g-Whitespace">     </span><span class="mi">10</span> <span class="c1"># try multiplying them</span>
 <span class="ne">---&gt; </span><span class="mi">11</span> <span class="nb">print</span><span class="p">(</span><span class="n">xl</span> <span class="o">*</span> <span class="n">yl</span><span class="p">)</span>
@@ -1184,6 +1219,7 @@ If something is confusing, you can look it up on Google (some popular sites for 
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#scientific-computing-with-numpy">3. Scientific computing with NumPy</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#d-arrays-i-e-matrices">2D arrays, i.e., matrices</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#helper-functions">Helper functions</a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#i-want-exactly-n-equally-spaced-values">I want exactly <span class="math notranslate nohighlight">\(N\)</span> equally spaced values</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#i-want-values-equally-spaced-by-delta">I want values equally spaced by <span class="math notranslate nohighlight">\(\delta\)</span></a></li>
