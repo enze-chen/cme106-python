@@ -5,7 +5,7 @@
 :class: tip
 Let us know!
 This is the first draft and we'd like to hear your feedback.
-You can open an issue on GitHub ({fa}`lightbulb`) or email Enze (`enze@`).
+Please fill out [this anonymous form](https://forms.gle/XVnLFdrB2U7gUMNW6) (requires Stanford login).
 ```
 ````
 

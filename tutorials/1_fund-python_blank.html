@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
   
@@ -407,16 +407,21 @@ document.write(`
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#contents">Contents</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#python-as-a-calculator">1. Python as a calculator</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#python-as-a-calculator">1. Python as a calculator</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#your-turn">Your turn</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#general-python-paradigms">2. General Python paradigms</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#restart-and-run-all-or-it-didnt-happen">“Restart and run all” or it didn’t happen</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data-structures">Data structures</a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#manipulating-lists">Manipulating lists</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Your turn</a></li>
 </ul>
 </li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#control-flow">Control flow</a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#conditional-statements">Conditional statements</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#loops">Loops</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Your turn</a></li>
 </ul>
 </li>
 </ul>
@@ -429,9 +434,13 @@ document.write(`
 </ul>
 </li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#element-wise-operations">Element-wise operations</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">Your turn</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#making-plots-with-matplotlib">4. Making plots with Matplotlib</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#making-plots-with-matplotlib">4. Making plots with Matplotlib</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">Your turn</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#whats-next">What’s next?</a></li>
 </ul>
             </nav>
@@ -523,22 +532,31 @@ Note that in Python, to check for equality between two things uses the <strong>d
 A single equals sign is for assignment (below).</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="kc">True</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="kc">True</span>    <span class="c1"># assignment to a variable, see next section</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
-<span class="n">b</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">==</span>
+<span class="nb">print</span><span class="p">(</span><span class="mi">1</span> <span class="o">==</span> <span class="mi">2</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span>  <span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">4</span><span class="p">],</span> <span class="n">line</span> <span class="mi">3</span>
-    <span class="n">b</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">==</span>
-            <span class="o">^</span>
-<span class="ne">SyntaxError</span>: invalid syntax
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+False
+</pre></div>
+</div>
+</div>
+</div>
+<section id="your-turn">
+<h3>Your turn<a class="headerlink" href="#your-turn" title="Link to this heading">#</a></h3>
+<p>In the code cell below, compute the product of all the integers from <span class="math notranslate nohighlight">\(1\)</span> to <span class="math notranslate nohighlight">\(9\)</span>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># TODO: Write your solution below</span>
 </pre></div>
 </div>
 </div>
 </div>
 <hr class="docutils" />
+</section>
 </section>
 <section id="general-python-paradigms">
 <span id="h-general"></span><h2>2. General Python paradigms<a class="headerlink" href="#general-python-paradigms" title="Link to this heading">#</a></h2>
@@ -699,6 +717,19 @@ This is one of the biggest differences between Python and MATLAB.</p>
 <p>There are many more data structures available to you, such as <strong>sets</strong>, <strong>dictionaries</strong>, etc.
 We encourage you to read more if you’re curious or as you encounter them.</p>
 </section>
+<section id="id2">
+<h4>Your turn<a class="headerlink" href="#id2" title="Link to this heading">#</a></h4>
+<p>Create a list of the first five positive integers.
+Then change the third element to <code class="docutils literal notranslate"><span class="pre">7</span></code>.
+Print the list to confirm the change was made.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># TODO: Write your solution below</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
 </section>
 <section id="control-flow">
 <h3>Control flow<a class="headerlink" href="#control-flow" title="Link to this heading">#</a></h3>
@@ -708,15 +739,22 @@ We’ll divide this into two categories for now: <strong>conditionals</strong> a
 <h4>Conditional statements<a class="headerlink" href="#conditional-statements" title="Link to this heading">#</a></h4>
 <p>We use this to describe <code class="docutils literal notranslate"><span class="pre">if</span></code>, <code class="docutils literal notranslate"><span class="pre">elif</span></code> (short for “else if”), and <code class="docutils literal notranslate"><span class="pre">else</span></code> statements.
 The general structure is like this:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">statement1</span><span class="p">:</span>
-    <span class="n">do</span> <span class="n">something</span> <span class="n">only</span> <span class="n">when</span> <span class="n">statement1</span> <span class="ow">is</span> <span class="kc">True</span>
-<span class="k">elif</span> <span class="n">statement2</span><span class="p">:</span>
-    <span class="n">otherwise</span><span class="p">,</span> <span class="n">do</span> <span class="n">something</span> <span class="k">if</span> <span class="n">statement2</span> <span class="ow">is</span> <span class="kc">True</span> <span class="p">(</span><span class="ow">and</span> <span class="n">statement1</span> <span class="n">was</span> <span class="kc">False</span><span class="p">)</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">condition1</span><span class="p">:</span>
+    <span class="n">do</span> <span class="n">something</span> <span class="n">only</span> <span class="n">when</span> <span class="n">condition1</span> <span class="ow">is</span> <span class="kc">True</span>
+<span class="k">elif</span> <span class="n">condition2</span><span class="p">:</span>
+    <span class="n">otherwise</span><span class="p">,</span> <span class="n">do</span> <span class="n">something</span> <span class="k">if</span> <span class="n">condition2</span> <span class="ow">is</span> <span class="kc">True</span> <span class="p">(</span><span class="ow">and</span> <span class="n">condition1</span> <span class="n">was</span> <span class="kc">False</span><span class="p">)</span>
 <span class="k">else</span><span class="p">:</span>
     <span class="n">otherwise</span><span class="p">,</span> <span class="n">do</span> <span class="n">something</span>
 </pre></div>
 </div>
-<p>Note that <code class="docutils literal notranslate"><span class="pre">if</span></code> is required, and the other two are <em>optional</em>.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><code class="docutils literal notranslate"><span class="pre">if</span></code> is required, and the other two are <em>optional</em>.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>In MATLAB, control flow blocks have an <code class="docutils literal notranslate"><span class="pre">end</span></code> to conclude. No need for that in Python!</p>
+</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="mi">2</span>
@@ -747,14 +785,15 @@ a is small
 </ul>
 <p>The <code class="docutils literal notranslate"><span class="pre">for</span></code> loop syntax in Python is:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">collection</span><span class="p">:</span>
-    <span class="n">do</span> <span class="n">something</span> <span class="n">repetitively</span><span class="p">,</span> <span class="n">where</span> <span class="n">each</span> <span class="n">iteration</span><span class="p">,</span> <span class="n">the</span> <span class="n">variable</span> <span class="n">i</span> <span class="n">takes</span> <span class="n">on</span> <span class="n">a</span> <span class="n">different</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">collection</span>
+    <span class="n">do</span> <span class="n">something</span> <span class="n">repeatedly</span><span class="p">,</span> <span class="n">where</span> <span class="n">each</span> <span class="n">iteration</span><span class="p">,</span> <span class="n">the</span> <span class="n">variable</span> <span class="n">i</span> <span class="n">takes</span> <span class="n">on</span> <span class="n">a</span> <span class="n">different</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">collection</span>
 </pre></div>
 </div>
 <p>where <code class="docutils literal notranslate"><span class="pre">collection</span></code> is usually a list-like object of values.
+The <code class="docutils literal notranslate"><span class="pre">for</span></code> loop stops when all the items in the collection are used once.
 A very common expression you’ll see for <code class="docutils literal notranslate"><span class="pre">collection</span></code> is <code class="docutils literal notranslate"><span class="pre">range(N)</span></code>, which is a <a class="reference external" href="https://docs.python.org/3/library/functions.html#func-range">built-in function</a> that enumerates numbers from <code class="docutils literal notranslate"><span class="pre">0</span></code> up to <code class="docutils literal notranslate"><span class="pre">N</span></code> (<em>not</em> inclusive).</p>
 <p>The <code class="docutils literal notranslate"><span class="pre">while</span></code> loop syntax in Python is:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">while</span> <span class="n">statement</span><span class="p">:</span>
-    <span class="n">do</span> <span class="n">something</span> <span class="n">until</span> <span class="n">statement</span> <span class="n">becomes</span> <span class="kc">False</span><span class="o">.</span> <span class="n">Try</span> <span class="ow">not</span> <span class="n">to</span> <span class="n">get</span> <span class="n">stuck</span> <span class="ow">in</span> <span class="n">an</span> <span class="n">infinite</span> <span class="n">loop</span><span class="err">!</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">while</span> <span class="n">condition</span><span class="p">:</span>
+    <span class="n">do</span> <span class="n">something</span> <span class="n">repeatedly</span> <span class="n">until</span> <span class="n">condition</span> <span class="n">becomes</span> <span class="kc">False</span><span class="o">.</span> <span class="n">Try</span> <span class="ow">not</span> <span class="n">to</span> <span class="n">get</span> <span class="n">stuck</span> <span class="ow">in</span> <span class="n">an</span> <span class="n">infinite</span> <span class="n">loop</span><span class="err">!</span>
 </pre></div>
 </div>
 <p>Let’s see these in action.</p>
@@ -784,6 +823,19 @@ A very common expression you’ll see for <code class="docutils literal notransl
 8
 7
 6
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="id3">
+<h4>Your turn<a class="headerlink" href="#id3" title="Link to this heading">#</a></h4>
+<p>Loop through the first ten positive integers.
+Print odd numbers as they are and print the negative value for even numbers.</p>
+<p>Hint: In Python, the <strong>modulo operator</strong> <code class="docutils literal notranslate"><span class="pre">%</span></code>, used as <code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">%</span> <span class="pre">b</span></code>, returns the remainder when <span class="math notranslate nohighlight">\(a\)</span> is divided by <span class="math notranslate nohighlight">\(b\)</span>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># TODO: Write your solution below</span>
 </pre></div>
 </div>
 </div>
@@ -849,6 +901,11 @@ We will import NumPy and then convert the list from above to a NumPy array using
 </div>
 </div>
 <p>Note how the printed array looks the same as the list, but it is a different class.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>We should mention: Not only do you have to import special packages, but you also have to <strong>install</strong> them separately from the base Python.
+Luckily, if you’re using Google Colab, all of the packages we’re using are common enough to come pre-installed.</p>
+</div>
 <p>Now we’ll do a series of tasks:</p>
 <ul class="simple">
 <li><p>Display each element. We can select array elements by using the appropriate <strong>index</strong>, <code class="docutils literal notranslate"><span class="pre">array[ind]</span></code>.</p></li>
@@ -1065,7 +1122,7 @@ Using the same operators could generate errors or incorrect behavior.</p>
 </div>
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">24</span><span class="p">],</span> <span class="n">line</span> <span class="mi">11</span>
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">27</span><span class="p">],</span> <span class="n">line</span> <span class="mi">11</span>
 <span class="g g-Whitespace">      </span><span class="mi">8</span> <span class="nb">print</span><span class="p">(</span><span class="n">zl</span><span class="p">)</span>
 <span class="g g-Whitespace">     </span><span class="mi">10</span> <span class="c1"># try multiplying them</span>
 <span class="ne">---&gt; </span><span class="mi">11</span> <span class="nb">print</span><span class="p">(</span><span class="n">xl</span> <span class="o">*</span> <span class="n">yl</span><span class="p">)</span>
@@ -1076,6 +1133,37 @@ Using the same operators could generate errors or incorrect behavior.</p>
 </div>
 </div>
 <p>Yikes.</p>
+<p>There are also many <a class="reference external" href="https://numpy.org/doc/stable/reference/routines.math.html">NumPy functions</a> that can operate on arrays in an element-wise fashion, such as the following examples.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">absolute</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[0.36787944 1.         2.71828183 7.3890561 ]
+[1 0 1 2]
+2
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="id4">
+<h3>Your turn<a class="headerlink" href="#id4" title="Link to this heading">#</a></h3>
+<p>Compute the value of the following function of <span class="math notranslate nohighlight">\(x\)</span> between <span class="math notranslate nohighlight">\(1\)</span> and <span class="math notranslate nohighlight">\(3\)</span>, using equally spaced points separated by <span class="math notranslate nohighlight">\(0.2\)</span>.</p>
+<div class="math notranslate nohighlight">
+\[ y = x \cos \left( x^2 \right) + \frac{1}{x^3} \]</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># TODO: Write your solution below</span>
+</pre></div>
+</div>
+</div>
+</div>
 <hr class="docutils" />
 </section>
 </section>
@@ -1107,14 +1195,14 @@ The standard syntax (best practice) for Pyplot is as follows:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/c0592be5f54451648cff7e5b0f523f93115161529e35cb48d506bad25ea3cb12.png" src="../_images/c0592be5f54451648cff7e5b0f523f93115161529e35cb48d506bad25ea3cb12.png" />
+<img alt="../_images/e3a1c75a624984efd29e9172a3c1cb1e1271d79953ce4de0ae97a9cd06823e77.png" src="../_images/e3a1c75a624984efd29e9172a3c1cb1e1271d79953ce4de0ae97a9cd06823e77.png" />
 </div>
 </div>
 <p>There are <strong>a ton of customizations</strong> you can apply, way more than what we can demonstrate.
 We’ll give a more elaborate example below, and otherwise will include links to important documentation</p>
 <ul class="simple">
 <li><p><a class="reference external" href="https://matplotlib.org/stable/plot_types/index.html">Plot types</a> - including 3D!</p></li>
-<li><p><a class="reference external" href="https://matplotlib.org/stable/users/explain/colors/colormaps.html">Choosing colormaps</a></p></li>
+<li><p><a class="reference external" href="https://matplotlib.org/stable/users/explain/colors/colors.html">Choosing colors</a></p></li>
 <li><p><a class="reference external" href="https://matplotlib.org/stable/api/_as_gen/matplotlib.axes.Axes.set.html">Setting axis features</a> - labels, limits, titles, etc.</p></li>
 <li><p><a class="reference external" href="https://matplotlib.org/stable/users/explain/text/annotations.html">Annotations</a></p></li>
 <li><p><a class="reference external" href="https://matplotlib.org/cheatsheets/">Cheatsheets</a></p></li>
@@ -1136,10 +1224,22 @@ We’ll give a more elaborate example below, and otherwise will include links to
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/d5e95601c0be55815f1d5a843f944f12b389c9191c368046a9c10fcead75f384.png" src="../_images/d5e95601c0be55815f1d5a843f944f12b389c9191c368046a9c10fcead75f384.png" />
+<img alt="../_images/880066c32e7cecc88be2f752f348c06a2bf00f901107c1346302a807609d0117.png" src="../_images/880066c32e7cecc88be2f752f348c06a2bf00f901107c1346302a807609d0117.png" />
+</div>
+</div>
+<section id="id5">
+<h3>Your turn<a class="headerlink" href="#id5" title="Link to this heading">#</a></h3>
+<p>Define and plot the function <span class="math notranslate nohighlight">\(y(x) = |x|\)</span> for <span class="math notranslate nohighlight">\(x\)</span> ranging between <span class="math notranslate nohighlight">\(-1\)</span> and <span class="math notranslate nohighlight">\(1\)</span>, with <span class="math notranslate nohighlight">\(x\)</span> coordinates spaced by <span class="math notranslate nohighlight">\(0.05\)</span>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># TODO: Write your solution below</span>
+</pre></div>
+</div>
 </div>
 </div>
 </section>
+</section>
+<hr class="docutils" />
 <section id="whats-next">
 <h2>What’s next?<a class="headerlink" href="#whats-next" title="Link to this heading">#</a></h2>
 <p>So this was obviously way too quick and dense, but hopefully it gives you some foundation in Python.
@@ -1204,16 +1304,21 @@ If something is confusing, you can look it up on Google (some popular sites for 
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#contents">Contents</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#python-as-a-calculator">1. Python as a calculator</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#python-as-a-calculator">1. Python as a calculator</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#your-turn">Your turn</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#general-python-paradigms">2. General Python paradigms</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#restart-and-run-all-or-it-didnt-happen">“Restart and run all” or it didn’t happen</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data-structures">Data structures</a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#manipulating-lists">Manipulating lists</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Your turn</a></li>
 </ul>
 </li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#control-flow">Control flow</a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#conditional-statements">Conditional statements</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#loops">Loops</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Your turn</a></li>
 </ul>
 </li>
 </ul>
@@ -1226,9 +1331,13 @@ If something is confusing, you can look it up on Google (some popular sites for 
 </ul>
 </li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#element-wise-operations">Element-wise operations</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">Your turn</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#making-plots-with-matplotlib">4. Making plots with Matplotlib</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#making-plots-with-matplotlib">4. Making plots with Matplotlib</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">Your turn</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#whats-next">What’s next?</a></li>
 </ul>
   </nav></div>
@@ -1268,8 +1377,8 @@ By Enze Chen and Vadim Khayms
   <div class="footer-item">
     
 <div class="extra_footer">
-  <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">
-  <img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/80x15.png" />
+  <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">
+  <img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc/4.0/80x15.png" />
 </a>
 
 </div>
