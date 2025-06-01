@@ -19,8 +19,8 @@ Files ending in `_solu.ipynb` will be ignored by git.
 python convert_pdf.py {path_to_solution_notebooks} -n {merged_pdf_name.pdf}
 ```
 
-[![CC BY-NC-SA 4.0][cc-by-nc-sa-image]][cc-by-nc-sa]
+[![CC BY-NC 4.0][cc-by-nc-image]][cc-by-nc]
 
-[cc-by-nc-sa]: http://creativecommons.org/licenses/by-nc-sa/4.0/
-[cc-by-nc-sa-image]: https://licensebuttons.net/l/by-nc-sa/4.0/88x31.png
+[cc-by-nc]: http://creativecommons.org/licenses/by-nc/4.0/
+[cc-by-nc-image]: https://licensebuttons.net/l/by-nc/4.0/88x31.png
 
