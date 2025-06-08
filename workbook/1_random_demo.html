@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
   
@@ -426,24 +426,40 @@ document.write(`
 <p class="admonition-title">Important!</p>
 <p>If you’re completely new to Python, you may want to go through the exercises in the <a class="reference internal" href="../tutorials/1_fund-python_blank.html"><span class="doc">Python fundamentals</span></a> notebook first!</p>
 </div>
-<p>There are many instances in probability and statistics, particularly when it comes to sampling, that you will need to produce random numbers or simulate random processes.
-This can be easily done in a programming language like Python, although the syntax has evolved over the years, so please beware!</p>
+<p>There are many instances in probability and statistics, particularly when it comes to sampling, that you will need to produce <strong>random numbers</strong> or simulate <strong>random processes</strong>.
+This can be done quite efficiently in Python, allowing you to model engineering designs with greater confidence.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The syntax for generating random numbers in Python has evolved over the years, so this workbook tries to follow current best practices!</p>
+</div>
 <section id="summary-of-commands">
 <h2>Summary of commands<a class="headerlink" href="#summary-of-commands" title="Link to this heading">#</a></h2>
 <p>In this exercise, we will demonstrate the following:</p>
 <ul class="simple">
 <li><p><a class="reference external" href="https://numpy.org/doc/stable/index.html"><strong>Numpy</strong></a></p>
 <ul>
-<li><p><a class="reference external" href="https://numpy.org/doc/stable/reference/random/generator.html"><code class="docutils literal notranslate"><span class="pre">np.random.default_rng()</span></code></a> - Object for generating random values.</p></li>
-<li><p><a class="reference external" href="https://numpy.org/doc/stable/reference/random/generated/numpy.random.Generator.uniform.html"><code class="docutils literal notranslate"><span class="pre">rng.uniform()</span></code></a> - Generates a random array from a uniform distribution.</p></li>
-<li><p><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.absolute.html"><code class="docutils literal notranslate"><span class="pre">np.abs()</span></code></a> - Takes the absolute value of all array elements.</p></li>
-<li><p><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.sum.html"><code class="docutils literal notranslate"><span class="pre">np.sum()</span></code></a> - Sums the values in an array, along an axis if given.</p></li>
+<li><p><a class="reference external" href="https://numpy.org/doc/stable/reference/random/generator.html"><code class="docutils literal notranslate"><span class="pre">np.random.default_rng()</span></code></a> - Object for generating random values.</p>
+<ul>
+<li><p>Optional <code class="docutils literal notranslate"><span class="pre">seed</span></code> for consistent values.</p></li>
+</ul>
+</li>
+<li><p><a class="reference external" href="https://numpy.org/doc/stable/reference/random/generated/numpy.random.Generator.uniform.html"><code class="docutils literal notranslate"><span class="pre">rng.uniform(low,</span> <span class="pre">high,</span> <span class="pre">size)</span></code></a> - Generates a random array of <code class="docutils literal notranslate"><span class="pre">size</span></code> dimensions from a uniform distribution between <code class="docutils literal notranslate"><span class="pre">[low,</span> <span class="pre">high)</span></code>.</p>
+<ul>
+<li><p>If <code class="docutils literal notranslate"><span class="pre">size</span></code> is not specified, then a single value is generated.</p></li>
+</ul>
+</li>
+<li><p><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.absolute.html"><code class="docutils literal notranslate"><span class="pre">np.abs(arr)</span></code></a> - Takes the absolute value of all elements in <code class="docutils literal notranslate"><span class="pre">arr</span></code>.</p></li>
+<li><p><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.sum.html"><code class="docutils literal notranslate"><span class="pre">np.sum(arr)</span></code></a> - Sums the values in <code class="docutils literal notranslate"><span class="pre">arr</span></code>.</p>
+<ul>
+<li><p>Can be along a specific <code class="docutils literal notranslate"><span class="pre">axis</span></code> if given.</p></li>
+</ul>
+</li>
 </ul>
 </li>
 <li><p><a class="reference external" href="https://matplotlib.org/stable/"><strong>Matplotlib</strong></a></p>
 <ul>
-<li><p><a class="reference external" href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.subplots.html"><code class="docutils literal notranslate"><span class="pre">plt.subplots()</span></code></a> - Create Figure and Axes objects for plotting.</p></li>
-<li><p><a class="reference external" href="https://matplotlib.org/stable/api/_as_gen/matplotlib.axes.Axes.hist.html"><code class="docutils literal notranslate"><span class="pre">ax.hist()</span></code></a> - Create a frequency plot (histogram).</p></li>
+<li><p><a class="reference external" href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.subplots.html"><code class="docutils literal notranslate"><span class="pre">plt.subplots()</span></code></a> - Create Figure and Axes objects for plotting. Many optional parameters.</p></li>
+<li><p><a class="reference external" href="https://matplotlib.org/stable/api/_as_gen/matplotlib.axes.Axes.hist.html"><code class="docutils literal notranslate"><span class="pre">ax.hist(arr,</span> <span class="pre">bins)</span></code></a> - Create a frequency plot (histogram) of the elements in <code class="docutils literal notranslate"><span class="pre">arr</span></code>, grouped into <code class="docutils literal notranslate"><span class="pre">bins</span></code> columns if specified (otherwise auto-calculated).</p></li>
 </ul>
 </li>
 </ul>
@@ -455,13 +471,13 @@ The problem is as follows:</p>
 <p>Two points <span class="math notranslate nohighlight">\(a\)</span> and <span class="math notranslate nohighlight">\(b\)</span> are selected at random along the <span class="math notranslate nohighlight">\(x\)</span>-axis such that <span class="math notranslate nohighlight">\(-2 \le b \le 0\)</span> and <span class="math notranslate nohighlight">\(0 \le a \le 3\)</span>.
 Find the probability that the distance between <span class="math notranslate nohighlight">\(a\)</span> and <span class="math notranslate nohighlight">\(b\)</span> is greater than <span class="math notranslate nohighlight">\(3\)</span> by performing one million trials.
 Make a histogram of the generated distances between <span class="math notranslate nohighlight">\(a\)</span> and <span class="math notranslate nohighlight">\(b\)</span>.</p>
-<p><strong>Hint</strong>: Generating a vector of random numbers all at once is computationally more efficient than generating random values one at a time within a <code class="docutils literal notranslate"><span class="pre">for</span></code> loop!</p>
+<p>Hint: Generating a vector of random numbers all at once is computationally more efficient than generating random values one at a time within a <code class="docutils literal notranslate"><span class="pre">for</span></code> loop!</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># import necessary libraries</span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
 
-<span class="c1"># create the rng object</span>
+<span class="c1"># create the rng object; we use a seed for consistent results</span>
 <span class="n">rng</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">default_rng</span><span class="p">(</span><span class="n">seed</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
 
 <span class="c1"># store the number of trials</span>
@@ -482,19 +498,20 @@ Make a histogram of the generated distances between <span class="math notranslat
 </div>
 </div>
 </div>
+<p>The final line uses the special <a class="reference external" href="https://docs.python.org/3/tutorial/inputoutput.html#formatted-string-literals"><em>f-strings</em></a> construct, which we encourage you to learn as it’s very efficient.</p>
 <p>Now that we have the data, we can also plot it.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># import necessary libraries</span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
 
-<span class="c1"># create the objects</span>
+<span class="c1"># create the Figure and Axes objects</span>
 <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
 
-<span class="c1"># make the plot</span>
+<span class="c1"># make the histogram </span>
 <span class="n">ax</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">d</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="mi">100</span><span class="p">)</span>
 
-<span class="c1"># style and show it</span>
+<span class="c1"># style the plot (with LaTeX!) and show it</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">xlabel</span><span class="o">=</span><span class="sa">r</span><span class="s2">&quot;$d = |x - y|$&quot;</span><span class="p">,</span> <span class="n">ylabel</span><span class="o">=</span><span class="s1">&#39;counts&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>

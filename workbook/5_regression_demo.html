@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
   
@@ -426,17 +426,18 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="regression-and-correlation-analyses">
 <h1><span class="section-number">5. </span>Regression and correlation analyses<a class="headerlink" href="#regression-and-correlation-analyses" title="Link to this heading">#</a></h1>
-<p>Regression and correlation analyses are statistical techniques used to examine the relationships between variables, enabling us to understand how changes in one variable may affect another.
-By quantifying these relationships, we can make predictions and informed decisions based on data.</p>
+<p>Regression and correlation analyses are statistical techniques used to examine the <strong>relationships between variables</strong>, enabling us to understand how changes in one variable may affect another.
+By quantifying these relationships, we can <strong>make predictions</strong> and informed decisions based on data.
+Much of the advances (and hype) in the field of <a class="reference external" href="https://www.nature.com/articles/d42473-025-00161-3">AI for Science</a> rest on performing regressions and leveraging correlations!</p>
 <section id="summary-of-commands">
 <h2>Summary of commands<a class="headerlink" href="#summary-of-commands" title="Link to this heading">#</a></h2>
 <p>In this exercise, we will demonstrate the following:</p>
 <ul class="simple">
 <li><p><a class="reference external" href="https://numpy.org/doc/stable/"><strong>NumPy</strong></a>:</p>
 <ul>
-<li><p><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.polyfit.html"><code class="docutils literal notranslate"><span class="pre">np.polyfit()</span></code></a> - Construct a least squares polynomial fit.</p></li>
-<li><p><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.corrcoef.html"><code class="docutils literal notranslate"><span class="pre">np.corrcoef()</span></code></a> - Calculate Pearson correlation coefficients.</p></li>
-<li><p><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.polyval.html"><code class="docutils literal notranslate"><span class="pre">np.polyval()</span></code></a> - Evaluate a fitted polynomial at specific values.</p></li>
+<li><p><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.polyfit.html"><code class="docutils literal notranslate"><span class="pre">np.polyfit(x,</span> <span class="pre">y,</span> <span class="pre">deg)</span></code></a> - Construct a least squares polynomial fit of <code class="docutils literal notranslate"><span class="pre">y</span></code> vs. <code class="docutils literal notranslate"><span class="pre">x</span></code> of degree <code class="docutils literal notranslate"><span class="pre">deg</span></code>.</p></li>
+<li><p><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.corrcoef.html"><code class="docutils literal notranslate"><span class="pre">np.corrcoef(x,</span> <span class="pre">y)</span></code></a> - Calculate Pearson correlation coefficients between arrays <code class="docutils literal notranslate"><span class="pre">x</span></code> and <code class="docutils literal notranslate"><span class="pre">y</span></code>.</p></li>
+<li><p><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.polyval.html"><code class="docutils literal notranslate"><span class="pre">np.polyval(p,</span> <span class="pre">x)</span></code></a> - Evaluate a fitted polynomial <code class="docutils literal notranslate"><span class="pre">p</span></code> at specific values <code class="docutils literal notranslate"><span class="pre">x</span></code>.</p></li>
 </ul>
 </li>
 </ul>
@@ -446,7 +447,7 @@ By quantifying these relationships, we can make predictions and informed decisio
 <p>Thermistors are passive devices frequently used to measure temperature.
 They are resistive elements whose resistance increases as a function of temperature.
 To calibrate a thermistor, a voltage is applied across its terminals and the value of the current is recorded for a given temperature.
-The data collected is shown in the table below (current in Amperes and voltage in Volts).</p>
+The data collected is shown in the table below (current in amperes and voltage in volts).</p>
 <div class="pst-scrollable-table-container"><table class="table">
 <thead>
 <tr class="row-odd"><th class="head text-center"><p><span class="math notranslate nohighlight">\(T = 10 ^{\circ}\mathrm{C}\)</span></p></th>

@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
   
@@ -439,7 +439,7 @@ This process is crucial in engineering applications, such as quality control and
 <li><p>We will also work with <span class="math notranslate nohighlight">\(z\)</span>-tests for the difference between means of normally distributed data.
 Shockingly, while this function exists in MATLAB (<a class="reference external" href="https://www.mathworks.com/help/stats/ztest.html"><code class="docutils literal notranslate"><span class="pre">ztest()</span></code></a>), it does not exist in common Python libraries (<a class="reference external" href="https://www.statsmodels.org/dev/generated/statsmodels.stats.weightstats.ztest.html"><code class="docutils literal notranslate"><span class="pre">statsmodels</span></code></a> isn’t quite accurate), so we’ll simply write our own! 😎</p>
 <ul>
-<li><p>In writing this function, we will use the <code class="docutils literal notranslate"><span class="pre">sf()</span></code> <strong>survival function</strong> which is <span class="math notranslate nohighlight">\(1 - \text{CDF}\)</span>.</p></li>
+<li><p>In writing this function, we will use the <code class="docutils literal notranslate"><span class="pre">sf()</span></code> <strong>survival function</strong> which is <code class="docutils literal notranslate"><span class="pre">1</span> <span class="pre">-</span> <span class="pre">cdf()</span></code>.</p></li>
 </ul>
 </li>
 </ul>
@@ -539,6 +539,11 @@ Report the <span class="math notranslate nohighlight">\(p\)</span> value.</p>
 </div>
 </div>
 <p>Since the <span class="math notranslate nohighlight">\(p\)</span>-value is <span class="math notranslate nohighlight">\(&gt; \alpha=0.05\)</span>, we <strong>cannot reject</strong> the null hypothesis and the new process is not adopted.</p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>Indeed, the language is funny, but it reflects the fact that we’re evaluating the strength of the data <em>against</em> <span class="math notranslate nohighlight">\(H_0\)</span>, rather than the strength in <em>proving it true</em>.
+In fact, <span class="math notranslate nohighlight">\(H_0\)</span> <em>could</em> still be false (in the absolute sense), and we just simply didn’t collect the right data.</p>
+</div>
 </section>
 <section id="demo-2">
 <h2>Demo 2<a class="headerlink" href="#demo-2" title="Link to this heading">#</a></h2>

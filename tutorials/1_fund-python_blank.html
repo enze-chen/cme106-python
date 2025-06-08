@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
   
@@ -429,8 +429,8 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#scientific-computing-with-numpy">3. Scientific computing with NumPy</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#d-arrays-i-e-matrices">2D arrays, i.e., matrices</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#helper-functions">Helper functions</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#i-want-exactly-n-equally-spaced-values">I want exactly <span class="math notranslate nohighlight">\(N\)</span> equally spaced values</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#i-want-values-equally-spaced-by-delta">I want values equally spaced by <span class="math notranslate nohighlight">\(\delta\)</span></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#you-want-exactly-n-equally-spaced-values">You want exactly <span class="math notranslate nohighlight">\(N\)</span> equally spaced values</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#you-want-values-equally-spaced-by-delta">You want values equally spaced by <span class="math notranslate nohighlight">\(\delta\)</span></a></li>
 </ul>
 </li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#element-wise-operations">Element-wise operations</a></li>
@@ -462,7 +462,7 @@ We encourage you to experiment with customized values to deepen your learning.</
 </div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>To save your progress, make a copy of this notebook in Colab <code class="docutils literal notranslate"><span class="pre">File</span> <span class="pre">&gt;</span> <span class="pre">Save</span> <span class="pre">a</span> <span class="pre">copy</span></code> and you’ll find it in <code class="docutils literal notranslate"><span class="pre">My</span> <span class="pre">Drive</span> <span class="pre">&gt;</span> <span class="pre">Colab</span> <span class="pre">Notebooks</span></code>.</p>
+<p>To save your progress, make a copy of this notebook in Colab <code class="docutils literal notranslate"><span class="pre">File</span> <span class="pre">&gt;</span> <span class="pre">Save</span> <span class="pre">a</span> <span class="pre">copy</span> <span class="pre">in</span> <span class="pre">Drive</span></code> and you’ll find it in <code class="docutils literal notranslate"><span class="pre">My</span> <span class="pre">Drive</span> <span class="pre">&gt;</span> <span class="pre">Colab</span> <span class="pre">Notebooks</span></code>.</p>
 </div>
 <p>In this notebook, we’ll provide a quick tutorial of Python to familiarize you with common use cases and syntax.</p>
 <section id="contents">
@@ -492,6 +492,43 @@ In the example below, the asterisk <code class="docutils literal notranslate"><s
 </div>
 </div>
 </div>
+<p>Many other operations are also possible, some have intuitive syntax, others less so.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">1</span> <span class="o">+</span> <span class="mi">1</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">5</span> <span class="o">/</span> <span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.6666666666666667
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">5</span> <span class="o">//</span> <span class="mi">3</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1
+</pre></div>
+</div>
+</div>
+</div>
 <p>In addition to <strong>integers</strong> (<code class="docutils literal notranslate"><span class="pre">int</span></code>) and <strong>floats</strong> (<code class="docutils literal notranslate"><span class="pre">float</span></code>, decimals), another data type you will often encounter is <strong>strings</strong> (<code class="docutils literal notranslate"><span class="pre">str</span></code>), which are literal expressions for text.
 They can be enclosed in double <code class="docutils literal notranslate"><span class="pre">&quot;</span></code> or single <code class="docutils literal notranslate"><span class="pre">'</span></code> quotes, but you have to be consistent.</p>
 <div class="cell docutils container">
@@ -506,12 +543,12 @@ They can be enclosed in double <code class="docutils literal notranslate"><span 
 </div>
 </div>
 </div>
-<p>Note that in the above two examples, the output automatically appeared when the cell was executed.
-This will occur for the <em>last line only</em> and is sometimes nice, often unintentional.
-To force display, you can always use the <code class="docutils literal notranslate"><span class="pre">print()</span></code> function, like so:</p>
+<p>Note that in the above examples, the output automatically appeared when the cell was executed.
+This will occur for the <em>last line only</em>, and can be suppressed with a trailing semicolon <code class="docutils literal notranslate"><span class="pre">;</span></code> if so desired.
+To force display of any quantity from any line, you can always use the <code class="docutils literal notranslate"><span class="pre">print()</span></code> function, like so:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># comments start with a pound sign and aren&#39;t printed</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># comments start with a pound sign and don&#39;t affect the code</span>
 <span class="nb">print</span><span class="p">(</span><span class="mf">3.1415</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;CME 100&#39;</span><span class="p">)</span>
 </pre></div>
@@ -561,14 +598,12 @@ False
 <section id="general-python-paradigms">
 <span id="h-general"></span><h2>2. General Python paradigms<a class="headerlink" href="#general-python-paradigms" title="Link to this heading">#</a></h2>
 <p><a class="reference internal" href="#contents"><span class="std std-ref">Back to top</span></a></p>
-<p>In addition to being used as a calculator, Python can store inputs or outputs into <strong>variables</strong> using the <strong>assignment operator</strong> (<code class="docutils literal notranslate"><span class="pre">=</span></code>).
-If a semicolon <code class="docutils literal notranslate"><span class="pre">;</span></code> is placed at the end of a statement, the value of that expression is calculated but not displayed on the screen.</p>
+<p>In addition to being used as a calculator, Python can store inputs or outputs into <strong>variables</strong> using the <strong>assignment operator</strong> (<code class="docutils literal notranslate"><span class="pre">=</span></code>).</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Define a</span>
 <span class="n">a</span> <span class="o">=</span> <span class="mi">2</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
-<span class="n">a</span><span class="p">;</span>
 </pre></div>
 </div>
 </div>
@@ -624,8 +659,7 @@ If a semicolon <code class="docutils literal notranslate"><span class="pre">;</s
 <h3>“Restart and run all” or it didn’t happen<a class="headerlink" href="#restart-and-run-all-or-it-didnt-happen" title="Link to this heading">#</a></h3>
 <p>With Jupyter notebooks, you have the power to run cells in any order you want.
 And with great power comes great responsibility.
-It’s easy to get variables mixed up and then your notebook starts giving you errors;
-or worse someone might intentionally use this to conceal duplicitly (e.g., their notebook appears functional based on cell outputs, but actually isn’t when executed from top to bottom).</p>
+It’s easy to get variables mixed up and then your notebook starts giving you errors.</p>
 <p>So if you ever need to reset anything, the easiest way is to go to <code class="docutils literal notranslate"><span class="pre">Runtime</span> <span class="pre">&gt;</span> <span class="pre">Restart</span> <span class="pre">session</span> <span class="pre">and</span> <span class="pre">run</span> <span class="pre">all</span></code> on Colab or <code class="docutils literal notranslate"><span class="pre">Run</span> <span class="pre">&gt;</span> <span class="pre">Restart</span> <span class="pre">Kernel</span> <span class="pre">and</span> <span class="pre">Run</span> <span class="pre">All</span> <span class="pre">Cells...</span></code> on Jupyter Lab.
 This clears all variables and outputs from the workspace and runs your notebook from top to bottom.</p>
 <div class="admonition note">
@@ -641,7 +675,7 @@ This is essentially equivalent.</p>
 </div>
 </div>
 </div>
-<p><strong>Before</strong> you run the next cell, try to restart the kernel (equivalent to <code class="docutils literal notranslate"><span class="pre">clear</span></code> in MATLAB) by clicking <code class="docutils literal notranslate"><span class="pre">Runtime</span> <span class="pre">&gt;</span> <span class="pre">Restart</span> <span class="pre">session</span></code> or <code class="docutils literal notranslate"><span class="pre">Kernel</span> <span class="pre">&gt;</span> <span class="pre">Restart</span> <span class="pre">Kernel...</span></code> and then try running the next cell, which shows the variable you computed before clearing the runtime.</p>
+<p><strong>Before</strong> you run the next cell, try to restart the kernel by clicking <code class="docutils literal notranslate"><span class="pre">Runtime</span> <span class="pre">&gt;</span> <span class="pre">Restart</span> <span class="pre">session</span></code> or <code class="docutils literal notranslate"><span class="pre">Kernel</span> <span class="pre">&gt;</span> <span class="pre">Restart</span> <span class="pre">Kernel...</span></code> and then try running the next cell, which shows the variable you computed before clearing the runtime.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">c</span>
@@ -663,11 +697,11 @@ See the examples below.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># creating lists</span>
-<span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">7</span><span class="p">]</span>
+<span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">7</span><span class="p">]</span>             <span class="c1"># a list of integers</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
 <span class="n">b</span> <span class="o">=</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="s1">&#39;hi&#39;</span><span class="p">,</span> <span class="mf">3.14</span><span class="p">,</span> <span class="kc">True</span><span class="p">]</span>    <span class="c1"># lists can be heterogeneous! </span>
 <span class="nb">print</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
-<span class="n">c</span> <span class="o">=</span> <span class="p">[]</span>    <span class="c1"># the empty list!</span>
+<span class="n">c</span> <span class="o">=</span> <span class="p">[]</span>                       <span class="c1"># the empty list!</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">c</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -686,8 +720,8 @@ See the examples below.</p>
 Here we will only show a few.</p>
 <div class="admonition important">
 <p class="admonition-title">Important</p>
-<p>Python is <strong>0-indexed</strong> which means the first element of my_list is <code class="docutils literal notranslate"><span class="pre">my_list[0]</span></code>, not <code class="docutils literal notranslate"><span class="pre">[1]</span></code>!
-This is one of the biggest differences between Python and MATLAB.</p>
+<p>Python is <strong>0-indexed</strong> which means the first element of <code class="docutils literal notranslate"><span class="pre">my_list</span></code> is <code class="docutils literal notranslate"><span class="pre">my_list[0]</span></code>, not <code class="docutils literal notranslate"><span class="pre">my_list[1]</span></code>!
+This is one of the <em>biggest differences</em> between Python and MATLAB.</p>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -696,8 +730,8 @@ This is one of the biggest differences between Python and MATLAB.</p>
 <span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">a</span><span class="p">[</span><span class="mi">3</span><span class="p">],</span> <span class="n">a</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>    <span class="c1"># what&#39;s the last one doing??</span>
 
 <span class="c1"># slicing a list (taking a range of values)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="mi">4</span><span class="p">],</span> <span class="n">a</span><span class="p">[</span><span class="mi">6</span><span class="p">:])</span>      <span class="c1"># start index is inclusive, end index is exclusive</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">[::</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>            <span class="c1"># ta-da!</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="mi">4</span><span class="p">],</span> <span class="n">a</span><span class="p">[</span><span class="mi">6</span><span class="p">:])</span>       <span class="c1"># start index is inclusive, end index is exclusive</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">[::</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>             <span class="c1"># ta-da!</span>
 
 <span class="c1"># adding to a list with append()</span>
 <span class="n">a</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">42</span><span class="p">)</span>
@@ -740,11 +774,11 @@ We’ll divide this into two categories for now: <strong>conditionals</strong> a
 <p>We use this to describe <code class="docutils literal notranslate"><span class="pre">if</span></code>, <code class="docutils literal notranslate"><span class="pre">elif</span></code> (short for “else if”), and <code class="docutils literal notranslate"><span class="pre">else</span></code> statements.
 The general structure is like this:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">condition1</span><span class="p">:</span>
-    <span class="n">do</span> <span class="n">something</span> <span class="n">only</span> <span class="n">when</span> <span class="n">condition1</span> <span class="ow">is</span> <span class="kc">True</span>
+    <span class="o">&lt;</span><span class="n">do</span> <span class="n">something</span> <span class="n">only</span> <span class="n">when</span> <span class="n">condition1</span> <span class="ow">is</span> <span class="kc">True</span><span class="o">&gt;</span>
 <span class="k">elif</span> <span class="n">condition2</span><span class="p">:</span>
-    <span class="n">otherwise</span><span class="p">,</span> <span class="n">do</span> <span class="n">something</span> <span class="k">if</span> <span class="n">condition2</span> <span class="ow">is</span> <span class="kc">True</span> <span class="p">(</span><span class="ow">and</span> <span class="n">condition1</span> <span class="n">was</span> <span class="kc">False</span><span class="p">)</span>
+    <span class="o">&lt;</span><span class="n">otherwise</span><span class="p">,</span> <span class="n">do</span> <span class="n">something</span> <span class="k">else</span> <span class="k">if</span> <span class="n">condition2</span> <span class="ow">is</span> <span class="kc">True</span> <span class="p">(</span><span class="ow">and</span> <span class="n">condition1</span> <span class="n">was</span> <span class="kc">False</span><span class="p">)</span><span class="o">&gt;</span>
 <span class="k">else</span><span class="p">:</span>
-    <span class="n">otherwise</span><span class="p">,</span> <span class="n">do</span> <span class="n">something</span>
+    <span class="o">&lt;</span><span class="n">otherwise</span><span class="p">,</span> <span class="n">do</span> <span class="n">something</span> <span class="k">else</span><span class="o">&gt;</span>
 </pre></div>
 </div>
 <div class="admonition note">
@@ -785,15 +819,15 @@ a is small
 </ul>
 <p>The <code class="docutils literal notranslate"><span class="pre">for</span></code> loop syntax in Python is:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">collection</span><span class="p">:</span>
-    <span class="n">do</span> <span class="n">something</span> <span class="n">repeatedly</span><span class="p">,</span> <span class="n">where</span> <span class="n">each</span> <span class="n">iteration</span><span class="p">,</span> <span class="n">the</span> <span class="n">variable</span> <span class="n">i</span> <span class="n">takes</span> <span class="n">on</span> <span class="n">a</span> <span class="n">different</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">collection</span>
+    <span class="o">&lt;</span><span class="n">do</span> <span class="n">something</span> <span class="n">repeatedly</span><span class="p">,</span> <span class="n">where</span> <span class="n">each</span> <span class="n">iteration</span><span class="p">,</span> <span class="n">the</span> <span class="n">variable</span> <span class="n">i</span> <span class="n">takes</span> <span class="n">on</span> <span class="n">a</span> <span class="n">different</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">collection</span><span class="o">&gt;</span>
 </pre></div>
 </div>
 <p>where <code class="docutils literal notranslate"><span class="pre">collection</span></code> is usually a list-like object of values.
 The <code class="docutils literal notranslate"><span class="pre">for</span></code> loop stops when all the items in the collection are used once.
-A very common expression you’ll see for <code class="docutils literal notranslate"><span class="pre">collection</span></code> is <code class="docutils literal notranslate"><span class="pre">range(N)</span></code>, which is a <a class="reference external" href="https://docs.python.org/3/library/functions.html#func-range">built-in function</a> that enumerates numbers from <code class="docutils literal notranslate"><span class="pre">0</span></code> up to <code class="docutils literal notranslate"><span class="pre">N</span></code> (<em>not</em> inclusive).</p>
+A very common expression you’ll see for <code class="docutils literal notranslate"><span class="pre">collection</span></code> is <a class="reference internal" href="#(https://docs.python.org/3/library/functions.html#func-range)"><span class="xref myst"><code class="docutils literal notranslate"><span class="pre">range(N)</span></code></span></a>, which is a built-in function that enumerates numbers from <code class="docutils literal notranslate"><span class="pre">0</span></code> up to <code class="docutils literal notranslate"><span class="pre">N</span></code> (<em>not</em> inclusive).</p>
 <p>The <code class="docutils literal notranslate"><span class="pre">while</span></code> loop syntax in Python is:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">while</span> <span class="n">condition</span><span class="p">:</span>
-    <span class="n">do</span> <span class="n">something</span> <span class="n">repeatedly</span> <span class="n">until</span> <span class="n">condition</span> <span class="n">becomes</span> <span class="kc">False</span><span class="o">.</span> <span class="n">Try</span> <span class="ow">not</span> <span class="n">to</span> <span class="n">get</span> <span class="n">stuck</span> <span class="ow">in</span> <span class="n">an</span> <span class="n">infinite</span> <span class="n">loop</span><span class="err">!</span>
+    <span class="o">&lt;</span><span class="n">do</span> <span class="n">something</span> <span class="n">repeatedly</span> <span class="n">until</span> <span class="n">condition</span> <span class="n">becomes</span> <span class="kc">False</span><span class="o">.</span> <span class="n">Try</span> <span class="ow">not</span> <span class="n">to</span> <span class="n">get</span> <span class="n">stuck</span> <span class="ow">in</span> <span class="n">an</span> <span class="n">infinite</span> <span class="n">loop</span><span class="err">!</span><span class="o">&gt;</span>
 </pre></div>
 </div>
 <p>Let’s see these in action.</p>
@@ -804,7 +838,7 @@ A very common expression you’ll see for <code class="docutils literal notransl
     <span class="n">j</span> <span class="o">+=</span> <span class="n">i</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">)</span>
 
-<span class="nb">print</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">()</span>   <span class="c1"># print an empty line for clarity</span>
 <span class="k">while</span> <span class="n">j</span> <span class="o">&gt;</span> <span class="mi">5</span><span class="p">:</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">j</span><span class="p">)</span>
     <span class="n">j</span> <span class="o">-=</span> <span class="mi">1</span>
@@ -854,7 +888,7 @@ In scientific computing in Python, these vectors are encoded as one-dimensional 
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">my_list</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">my_list</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">my_list</span><span class="p">))</span>   <span class="c1"># function that shows the class of an object</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">my_list</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -866,16 +900,16 @@ In scientific computing in Python, these vectors are encoded as one-dimensional 
 </div>
 </div>
 </div>
-<p>Now, the above looks like a vector, but we’re not quite done yet.
+<p>Now, the above looks like a vector, but we’re not quite there yet.
 We have to convert it to an array using the canonical scientific computing library <a class="reference external" href="https://numpy.org/">NumPy</a>.</p>
-<p>Unlike MATLAB, in Python we have to explicitly import any special packages we want to use, such as:</p>
+<p>Like other programming languages (including MATLAB), in Python we have to import any special packages we want to use, such as:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">my_package_name</span>
 
 <span class="n">my_package_name</span><span class="o">.</span><span class="n">special_function</span><span class="p">()</span>
 </pre></div>
 </div>
 <p>And then any functions we want to use from that package will have the package name prepended with a period.
-But, since NumPy is used <em>so</em> frequently, the community has a special paradigm to abbreviate the package import (called an <em>alias</em>) as follows:</p>
+But, since NumPy is used <em>so</em> frequently, the community has a special paradigm to abbreviate the package import (with an <em>alias</em>) as follows:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
 
 <span class="n">np</span><span class="o">.</span><span class="n">special_function</span><span class="p">()</span>
@@ -903,8 +937,8 @@ We will import NumPy and then convert the list from above to a NumPy array using
 <p>Note how the printed array looks the same as the list, but it is a different class.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>We should mention: Not only do you have to import special packages, but you also have to <strong>install</strong> them separately from the base Python.
-Luckily, if you’re using Google Colab, all of the packages we’re using are common enough to come pre-installed.</p>
+<p>We should mention: Not only do you have to import special packages, but you also have to <strong>install</strong> them into your Python environment.
+Luckily, if you’re using the Colab environment, all of the packages we’re using are common enough to come pre-installed.</p>
 </div>
 <p>Now we’ll do a series of tasks:</p>
 <ul class="simple">
@@ -978,16 +1012,16 @@ Recall that arrays are 0-indexed in Python!</p>
 </section>
 <section id="helper-functions">
 <h3>Helper functions<a class="headerlink" href="#helper-functions" title="Link to this heading">#</a></h3>
-<p>Creating vectors manually isn’t bad when there are only a few elements, but it would be quite annoying if you had dozens or hundreds of entries!
+<p>Creating vectors manually isn’t bad when there are only a few elements, but it would be quite annoying if you had dozens or hundreds of entries. 😵‍💫
 Luckily, there are some convenient functions that can be employed depending on your use case.</p>
-<section id="i-want-exactly-n-equally-spaced-values">
-<h4>I want exactly <span class="math notranslate nohighlight">\(N\)</span> equally spaced values<a class="headerlink" href="#i-want-exactly-n-equally-spaced-values" title="Link to this heading">#</a></h4>
+<section id="you-want-exactly-n-equally-spaced-values">
+<h4>You want exactly <span class="math notranslate nohighlight">\(N\)</span> equally spaced values<a class="headerlink" href="#you-want-exactly-n-equally-spaced-values" title="Link to this heading">#</a></h4>
 <p>Here you want to use the <a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.linspace.html"><code class="docutils literal notranslate"><span class="pre">np.linspace(start,</span> <span class="pre">stop,</span> <span class="pre">num)</span></code></a> function, which accepts as arguments:</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">start</span></code>: The first value of your array. Required.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">stop</span></code>: The last value of your array. Required.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">num</span></code>: The total number of elements in your array, equally spaced between start and stop <em>inclusive</em> (by default).
-If you do not specify this parameter, the default is <code class="docutils literal notranslate"><span class="pre">num=50</span></code>.</p></li>
+If you do not specify this parameter, the default is <code class="docutils literal notranslate"><span class="pre">50</span></code>.</p></li>
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1017,9 +1051,9 @@ We’ll discuss this nuance later when we encounter it.</p>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">my_array2_named</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="n">start</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">stop</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">num</span><span class="o">=</span><span class="mi">6</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">my_array2_named</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">my_array2_named</span><span class="o">.</span><span class="n">size</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">my_array2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="n">start</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">stop</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">num</span><span class="o">=</span><span class="mi">6</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">my_array2</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">my_array2</span><span class="o">.</span><span class="n">size</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1031,13 +1065,13 @@ We’ll discuss this nuance later when we encounter it.</p>
 </div>
 </div>
 </section>
-<section id="i-want-values-equally-spaced-by-delta">
-<h4>I want values equally spaced by <span class="math notranslate nohighlight">\(\delta\)</span><a class="headerlink" href="#i-want-values-equally-spaced-by-delta" title="Link to this heading">#</a></h4>
+<section id="you-want-values-equally-spaced-by-delta">
+<h4>You want values equally spaced by <span class="math notranslate nohighlight">\(\delta\)</span><a class="headerlink" href="#you-want-values-equally-spaced-by-delta" title="Link to this heading">#</a></h4>
 <p>Here you want to use the <a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.arange.html"><code class="docutils literal notranslate"><span class="pre">np.arange(start,</span> <span class="pre">stop,</span> <span class="pre">step)</span></code></a> function, which accepts as arguments:</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">start</span></code>: The first value of your array. Default is <code class="docutils literal notranslate"><span class="pre">0</span></code>, but best to always specify.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">stop</span></code>: The last value of your array, <strong>not inclusive</strong>. Required.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">step</span></code>: The increment between values starting from <code class="docutils literal notranslate"><span class="pre">start</span></code> and going up to <em>but not including</em> <code class="docutils literal notranslate"><span class="pre">stop</span></code>. Default is <code class="docutils literal notranslate"><span class="pre">1</span></code>, but best to always specify.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">step</span></code>: The increment between values starting from <code class="docutils literal notranslate"><span class="pre">start</span></code> and going up to <em>but not including</em> <code class="docutils literal notranslate"><span class="pre">stop</span></code>. Default is <code class="docutils literal notranslate"><span class="pre">1</span></code>.</p></li>
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1063,8 +1097,8 @@ We’ll discuss this nuance later when we encounter it.</p>
 <section id="element-wise-operations">
 <h3>Element-wise operations<a class="headerlink" href="#element-wise-operations" title="Link to this heading">#</a></h3>
 <p>We’ll define two vectors, <span class="math notranslate nohighlight">\(x = \begin{bmatrix} 1 &amp; -2 &amp; 5 &amp; 3 \end{bmatrix}\)</span> and <span class="math notranslate nohighlight">\(y = \begin{bmatrix} 4 &amp; 1 &amp; 0 &amp; -1 \end{bmatrix}\)</span>.
-We’ll multiply <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span> element by element, and then compute the squares of the elements of <span class="math notranslate nohighlight">\(x\)</span>.
-In Python/NumPy, this is done in the ways you’d expect.</p>
+We’ll multiply <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span> element-by-element, and then compute the squares of the elements of <span class="math notranslate nohighlight">\(x\)</span>.
+With NumPy, this is done in the ways you’d expect.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>    <span class="c1"># we do this every time</span>
@@ -1122,7 +1156,7 @@ Using the same operators could generate errors or incorrect behavior.</p>
 </div>
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">27</span><span class="p">],</span> <span class="n">line</span> <span class="mi">11</span>
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">30</span><span class="p">],</span> <span class="n">line</span> <span class="mi">11</span>
 <span class="g g-Whitespace">      </span><span class="mi">8</span> <span class="nb">print</span><span class="p">(</span><span class="n">zl</span><span class="p">)</span>
 <span class="g g-Whitespace">     </span><span class="mi">10</span> <span class="c1"># try multiplying them</span>
 <span class="ne">---&gt; </span><span class="mi">11</span> <span class="nb">print</span><span class="p">(</span><span class="n">xl</span> <span class="o">*</span> <span class="n">yl</span><span class="p">)</span>
@@ -1199,7 +1233,7 @@ The standard syntax (best practice) for Pyplot is as follows:</p>
 </div>
 </div>
 <p>There are <strong>a ton of customizations</strong> you can apply, way more than what we can demonstrate.
-We’ll give a more elaborate example below, and otherwise will include links to important documentation</p>
+We’ll give a more elaborate example below, and otherwise will include links to important documentation.</p>
 <ul class="simple">
 <li><p><a class="reference external" href="https://matplotlib.org/stable/plot_types/index.html">Plot types</a> - including 3D!</p></li>
 <li><p><a class="reference external" href="https://matplotlib.org/stable/users/explain/colors/colors.html">Choosing colors</a></p></li>
@@ -1244,7 +1278,7 @@ We’ll give a more elaborate example below, and otherwise will include links to
 <h2>What’s next?<a class="headerlink" href="#whats-next" title="Link to this heading">#</a></h2>
 <p>So this was obviously way too quick and dense, but hopefully it gives you some foundation in Python.
 The best way to learn is by doing (a perk of programming—compared to other disciplines, learning is relatively low risk with rapid feedback), so we encourage you to jump right into your assignments and look stuff up as you go.
-If something is confusing, you can look it up on Google (some popular sites for Q&amp;A inculde Stack Overflow, Geeks for Geeks, W3Schools) or ask Generative AI.</p>
+If something is confusing, you can look it up on Google (some popular sites for Q&amp;A inculde Stack Overflow, Geeks for Geeks, W3Schools) or ask generative AI.</p>
 </section>
 </section>
 
@@ -1326,8 +1360,8 @@ If something is confusing, you can look it up on Google (some popular sites for 
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#scientific-computing-with-numpy">3. Scientific computing with NumPy</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#d-arrays-i-e-matrices">2D arrays, i.e., matrices</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#helper-functions">Helper functions</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#i-want-exactly-n-equally-spaced-values">I want exactly <span class="math notranslate nohighlight">\(N\)</span> equally spaced values</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#i-want-values-equally-spaced-by-delta">I want values equally spaced by <span class="math notranslate nohighlight">\(\delta\)</span></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#you-want-exactly-n-equally-spaced-values">You want exactly <span class="math notranslate nohighlight">\(N\)</span> equally spaced values</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#you-want-values-equally-spaced-by-delta">You want values equally spaced by <span class="math notranslate nohighlight">\(\delta\)</span></a></li>
 </ul>
 </li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#element-wise-operations">Element-wise operations</a></li>

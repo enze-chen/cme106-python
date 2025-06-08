@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
   
@@ -433,7 +433,7 @@ document.write(`
 </div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>To save your progress, make a copy of this notebook in Colab <code class="docutils literal notranslate"><span class="pre">File</span> <span class="pre">&gt;</span> <span class="pre">Save</span> <span class="pre">a</span> <span class="pre">copy</span></code> and you’ll find it in <code class="docutils literal notranslate"><span class="pre">My</span> <span class="pre">Drive</span> <span class="pre">&gt;</span> <span class="pre">Colab</span> <span class="pre">Notebooks</span></code>.</p>
+<p>To save your progress, make a copy of this notebook in Colab <code class="docutils literal notranslate"><span class="pre">File</span> <span class="pre">&gt;</span> <span class="pre">Save</span> <span class="pre">a</span> <span class="pre">copy</span> <span class="pre">in</span> <span class="pre">Drive</span></code> and you’ll find it in <code class="docutils literal notranslate"><span class="pre">My</span> <span class="pre">Drive</span> <span class="pre">&gt;</span> <span class="pre">Colab</span> <span class="pre">Notebooks</span></code>.</p>
 </div>
 <section id="part-1">
 <h2>Part 1<a class="headerlink" href="#part-1" title="Link to this heading">#</a></h2>
@@ -466,8 +466,9 @@ Using the data in the table (in cars/hr), <strong>compute the maximum likelihood
 </tbody>
 </table>
 </div>
-<p>Note: Unfortunately the <code class="docutils literal notranslate"><span class="pre">poisson</span></code> package in <code class="docutils literal notranslate"><span class="pre">scipy.stats</span></code> does not have a <code class="docutils literal notranslate"><span class="pre">fit()</span></code> function.
-But is there a property of the Poisson distribution (and its property <span class="math notranslate nohighlight">\(\lambda\)</span>) that we can use to our advantage?</p>
+<p>Note: Unfortunately the <a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.poisson.html"><code class="docutils literal notranslate"><span class="pre">poisson</span></code></a> package in <code class="docutils literal notranslate"><span class="pre">scipy.stats</span></code> does not have a <code class="docutils literal notranslate"><span class="pre">fit()</span></code> function.
+But is there a property of the Poisson distribution (and its property <span class="math notranslate nohighlight">\(\lambda\)</span>) that we can use to our advantage?
+<a class="reference external" href="https://en.wikipedia.org/wiki/Poisson_distribution#Confidence_interval">See Wikipedia</a> for a hint.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># TODO: Write your code below</span>
@@ -484,10 +485,15 @@ Depending on the observed levels of the chemicals, the product is either accepte
 Given a <span class="math notranslate nohighlight">\(1 \times 6\)</span> input vector of measurements of the levels of chemicals and the output <span class="math notranslate nohighlight">\(Y\)</span>, the parameters <span class="math notranslate nohighlight">\(P(X_i = j \mid Y = 1)\)</span> where <span class="math notranslate nohighlight">\(i = 1,2,3,4,5,6\)</span> and <span class="math notranslate nohighlight">\(j = 1,2,3,4,5\)</span> can be estimated
 using maximum likelihood estimation analytically.
 The idea behind maximum likelihood parameter estimation is to determine the parameters that maximize the probability (likelihood) of the sample data.
-In our problem, each <span class="math notranslate nohighlight">\(X_i = j \mid Y = 1\)</span> is a random variable with parameters <span class="math notranslate nohighlight">\(p_{ij}\)</span>, which can be estimated as the ratio of the number of observations, in which both <span class="math notranslate nohighlight">\(Y = 1\)</span> and <span class="math notranslate nohighlight">\(X_i = j\)</span>, to the number of observations in which <span class="math notranslate nohighlight">\(Y = 1\)</span>.
+In our problem, each <span class="math notranslate nohighlight">\(X_i = j \mid Y = 1\)</span> is a random variable with parameters <span class="math notranslate nohighlight">\(p_{ij}\)</span>, which can be estimated as the ratio of the number of observations in which both <span class="math notranslate nohighlight">\(Y = 1\)</span> and <span class="math notranslate nohighlight">\(X_i = j\)</span> to the number of observations in which <span class="math notranslate nohighlight">\(Y = 1\)</span>.
 We can do the same for <span class="math notranslate nohighlight">\(Y = 0\)</span>.</p>
-<p>The given data (see file <code class="docutils literal notranslate"><span class="pre">classify_data.xls</span></code>) consists of 9000 tests described above.
-Remember you can upload data to Colab by dragging it into the 📁 tab (<a class="reference external" href="https://youtu.be/WrOBVktG1Fs">tutorial</a>).</p>
+<p>The given data (see file <code class="docutils literal notranslate"><span class="pre">classify_data.xlsx</span></code>) consists of 9000 tests described above.
+Remember you can upload data to Colab by dragging it into the 📁 tab (<a class="reference external" href="https://youtu.be/WrOBVktG1Fs">tutorial</a>).
+We suggest you use the <a class="reference external" href="https://pandas.pydata.org/">pandas</a> package to read in the data with the following syntax:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_excel</span><span class="p">(</span><span class="s2">&quot;classify_data.xlsx&quot;</span><span class="p">,</span> <span class="n">header</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">skiprows</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">usecols</span><span class="o">=</span><span class="s2">&quot;B:H&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
 <section id="a">
 <h3>(a)<a class="headerlink" href="#a" title="Link to this heading">#</a></h3>
 <p>Use the first 6000 tests to create a model for the given system, i.e., estimate the parameters <span class="math notranslate nohighlight">\(P(X_i = j \mid Y = 1)\)</span> and <span class="math notranslate nohighlight">\(P(X_i = j \mid Y = 0)\)</span> for <span class="math notranslate nohighlight">\(i = 1,2,3,4,5,6\)</span> and <span class="math notranslate nohighlight">\(j = 1,2,3,4,5\)</span>.</p>
@@ -501,7 +507,7 @@ Remember you can upload data to Colab by dragging it into the 📁 tab (<a class
 </section>
 <section id="b">
 <h3>(b)<a class="headerlink" href="#b" title="Link to this heading">#</a></h3>
-<p>Using the next 3000 test points, calculate <span class="math notranslate nohighlight">\(P(Y = 1 \mid X_1 = x_1, \dots, X_6 = x_6)\)</span></p>
+<p>Using the next 3000 test points, we will calculate <span class="math notranslate nohighlight">\(P(Y = y \mid X_1 = x_1, \dots, X_6 = x_6)\)</span>.</p>
 <p>From Bayes’ theorem, we know that:</p>
 <div class="math notranslate nohighlight">
 \[ P(Y = 1 \mid X_1 = x_1, \dots, X_6 = x_6) = \dfrac{P(X_1 = x_1, \dots, X_6 = x_6 \mid Y = 1) P(Y = 1)}{P(X_1 = x_1, \dots, X_6 = x_6)} \]</div>
@@ -514,13 +520,13 @@ Remember you can upload data to Colab by dragging it into the 📁 tab (<a class
 <p>If we make the additional “Naive Bayes” assumption where the feature values are independent of each other, namely:</p>
 <div class="math notranslate nohighlight">
 \[ P(X_1 = x_1, \dots, X_6 = x_6 \mid Y = y) = P(X_1 = x_1 \mid Y = y) \cdots P(X_6 = x_6 \mid Y = y) \]</div>
-<p>then our formula simplifies more and we can use our calculations from part a).
-For the last 3000 entries of the data (from 6001 to 9000), predict the data as <span class="math notranslate nohighlight">\(Y = 1\)</span> or <span class="math notranslate nohighlight">\(Y = 0\)</span> by computing:</p>
+<p>then our formula simplifies more and we can use our calculations from part (a).</p>
+<p>For the last 3000 entries of the data (from 6001 to 9000), predict the data as <span class="math notranslate nohighlight">\(Y = 1\)</span> or <span class="math notranslate nohighlight">\(Y = 0\)</span> by computing:</p>
 <div class="math notranslate nohighlight">
 \[ P(X_1 = x_1 | Y = y) \cdots P(X_6 = x_6 | Y = y) P(Y = y) \]</div>
 <p>for <span class="math notranslate nohighlight">\(y = 1\)</span> and <span class="math notranslate nohighlight">\(y = 0\)</span>, and choosing <span class="math notranslate nohighlight">\(Y = 1\)</span> or <span class="math notranslate nohighlight">\(Y = 0\)</span> based on which value is larger.
-Evaluate this method of prediction by comparing to the actual values for <span class="math notranslate nohighlight">\(Y\)</span> given in the data set.
-Compute the number of correct predictions divided by the number of predictions (3000).</p>
+Evaluate this method of prediction by comparing to the actual values for <span class="math notranslate nohighlight">\(Y\)</span> given in the data set.</p>
+<p><strong>Your final output</strong>: Compute the number of correct predictions divided by the number of predictions (3000).</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># TODO: Write your code below</span>

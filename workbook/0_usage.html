@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
   
@@ -405,16 +405,18 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#navigating-the-book">Navigating the book</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#interactivity">Interactivity</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#navigating-the-book">Navigating the book</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#why-python">Why Python? 🐍</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#interactivity">Interactivity</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#launching-colab">Launching Colab</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#running-a-jupyter-notebook">Running a Jupyter notebook</a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#markdown-cells">Markdown cells</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#code-cells">Code cells</a></li>
 </ul>
 </li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#saving-your-work">Saving your work</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#saving-your-work-long-term">Saving your work long term</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#uploading-and-downloading-data">Uploading and downloading data</a></li>
 </ul>
 </li>
@@ -438,7 +440,7 @@ document.write(`
   <section class="tex2jax_ignore mathjax_ignore" id="usage-tips">
 <h1>Usage tips<a class="headerlink" href="#usage-tips" title="Link to this heading">#</a></h1>
 <p>This document/website that you’re reading right now is created using <a class="reference external" href="https://jupyterbook.org/en/stable/intro.html">Jupyter Book</a>.
-Here, we will take a moment to explain the UI to help you get the most out of the experience.</p>
+Here, we will take a moment to explain the user interface to help you get the most out of the experience.</p>
 <section id="navigating-the-book">
 <h2>Navigating the book<a class="headerlink" href="#navigating-the-book" title="Link to this heading">#</a></h2>
 <p>For the most part, you can use the navigation panel on the left to jump quickly to the exercise you’re interested in.
@@ -460,6 +462,16 @@ This can be complicated, so instead we’re going to run everything in the cloud
 </figcaption>
 </figure>
 </aside>
+<section id="why-python">
+<h3>Why Python? 🐍<a class="headerlink" href="#why-python" title="Link to this heading">#</a></h3>
+<p>There are many programming languages one can choose from, and we are teaching Python as it has <a class="reference external" href="https://stackoverflow.blog/2017/09/06/incredible-growth-python/">skyrocketed in popularity</a> in recent years.
+This growth is in part due to:</p>
+<ol class="arabic simple">
+<li><p>Its <em>readability</em>. Python is designed to be simple and <a class="reference external" href="https://programmerhumor.io/python-memes/pythonisenglish/">reads like English</a>.</p></li>
+<li><p>Its <em>extensibility</em>. Python makes it easy for engineers to write modules that extend its functionalities for applications in <a class="reference external" href="https://wesmckinney.com/book/">data science</a>, <a class="reference external" href="https://www.nature.com/articles/s41586-020-2649-2">scientific computing</a>, and <a class="reference external" href="https://x.com/ThePSF/status/1362516507918483458">flying drones on Mars</a>.</p></li>
+<li><p>Its <em>open-source</em> properties. This means anyone can contribute to Python development and anyone can use it—for free!</p></li>
+</ol>
+</section>
 </section>
 <section id="interactivity">
 <h2>Interactivity<a class="headerlink" href="#interactivity" title="Link to this heading">#</a></h2>
@@ -467,18 +479,8 @@ This can be complicated, so instead we’re going to run everything in the cloud
 On these pages, you will be able to <strong>run Python code in real time</strong>, both for the tutorials to learn the commands and for your actual homework exercises.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>If you’ve ever used <a class="reference external" href="https://www.mathworks.com/products/matlab/live-editor.html">MATLAB Live Scripts</a>, this is basically the Python equivalent (not sure which came first).</p>
+<p>If you’ve ever used <a class="reference external" href="https://www.mathworks.com/products/matlab/live-editor.html">MATLAB Live Scripts</a>, this is the Python equivalent (and predecessor).</p>
 </div>
-<section id="why-python">
-<h3>Why Python? 🐍<a class="headerlink" href="#why-python" title="Link to this heading">#</a></h3>
-<p>There are many programming languages one can choose from, and we eventually settled on Python as it has <a class="reference external" href="https://stackoverflow.blog/2017/09/06/incredible-growth-python/">skyrocketed in popularity</a> in recent years.
-This growth is in part due to:</p>
-<ol class="arabic simple">
-<li><p>Its <em>readability</em>. Python is designed to be simple and reads like English.</p></li>
-<li><p>Its <em>extensibility</em>. Python makes it easy for developers to write <em>modules</em> that extend its functionalities for applications in <a class="reference external" href="https://wesmckinney.com/book/">data science</a>, <a class="reference external" href="https://www.nature.com/articles/s41586-020-2649-2">scientific computing</a>, and <a class="reference external" href="https://twitter.com/ThePSF/status/1362516507918483458?s=20">flying drones on Mars</a>.</p></li>
-<li><p>Its <em>open-source</em> properties. This means anyone can contribute to Python development and anyone can use it—for free!</p></li>
-</ol>
-</section>
 <section id="launching-colab">
 <h3>Launching Colab<a class="headerlink" href="#launching-colab" title="Link to this heading">#</a></h3>
 <p>To launch any notebook in Google Colab, hover over the <span class="fa fa-rocket"></span> icon in the top-right corner, then <kbd>Ctrl</kbd>+click the button <span class="guilabel">∞ Colab</span> (open in new tab), and wait for the environment to load.
@@ -498,15 +500,16 @@ Note that <em>not all pages are interactive</em>, and thus not all pages will ha
 <section id="markdown-cells">
 <h4>Markdown cells<a class="headerlink" href="#markdown-cells" title="Link to this heading">#</a></h4>
 <p>This cell is called a <strong>Markdown cell</strong>, which is used for text/media that can be formatted with the <a class="reference external" href="https://www.markdownguide.org/">Markdown</a> markup language.
-You know this is a Markdown cell because there is a white background and no ▶️ on the left side when you’ve selected the cell.
+You know this is a Markdown cell because there is a white background and no <kbd>▶</kbd> on the left side when you’ve selected the cell.
 If you double-click a Markdown cell, you can edit it; press <kbd>Shift</kbd>+<kbd>Enter</kbd> to save your edits and exit the cell.</p>
 </section>
 <section id="code-cells">
 <h4>Code cells<a class="headerlink" href="#code-cells" title="Link to this heading">#</a></h4>
 <p>Notice how the next cell looks a little different.
 It is a <strong>code cell</strong>, which allows you to write Python code and then <strong>execute the code</strong> with <kbd>Shift</kbd>+<kbd>Enter</kbd>.
-Or you can click the <kbd>▶ Run</kbd> button on the left side to execute the code.</p>
-<p><strong>Quick exercise:</strong> In the space below, enter your name between the quotation marks and then run the code cell by pressing <kbd>Shift</kbd>+<kbd>Enter</kbd>.</p>
+Or you can click the <kbd>▶</kbd> button on the left side to execute the code.</p>
+<p><strong>Quick exercise:</strong> In the space below, enter your name between the quotation marks and then run the code cell by pressing <kbd>Shift</kbd>+<kbd>Enter</kbd>.
+It will warn you anytime you run a notebook that wasn’t created by you, just to be safe!</p>
 <div class="cell tag_remove-output docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># inline comments in Python start with &quot;#&quot;</span>
@@ -517,7 +520,7 @@ Or you can click the <kbd>▶ Run</kbd> button on the left side to execute the c
 </div>
 </div>
 <p>You should see some output and a number appear between the square brackets!
-(e.g., <code class="docutils literal notranslate"><span class="pre">In</span> <span class="pre">[1]:</span></code>)
+(e.g., <code class="docutils literal notranslate"><span class="pre">[1]</span></code>)
 This number indicates the sequence of code cell execution, which can be handy for a few reasons:</p>
 <ul class="simple">
 <li><p>You can clearly tell which cells have been executed and which cells have not.</p></li>
@@ -532,37 +535,38 @@ Either to run code or save any Markdown text that you’ve edited.</p>
 </div>
 </section>
 </section>
-<section id="saving-your-work">
-<h3>Saving your work<a class="headerlink" href="#saving-your-work" title="Link to this heading">#</a></h3>
-<p>Unfortunately, if you close Colab (or even disconnect from the runtime environment), your work won’t be saved.
+<section id="saving-your-work-long-term">
+<h3>Saving your work long term<a class="headerlink" href="#saving-your-work-long-term" title="Link to this heading">#</a></h3>
+<p>Unfortunately, if you close Colab, your work won’t be saved.
 To save your own copy of this page, you should <strong>make a copy of this notebook</strong> by going to <code class="docutils literal notranslate"><span class="pre">File</span> <span class="pre">&gt;</span> <span class="pre">Save</span> <span class="pre">a</span> <span class="pre">copy</span> <span class="pre">in</span> <span class="pre">Drive</span></code>.
 You’ll find it in the folder <code class="docutils literal notranslate"><span class="pre">My</span> <span class="pre">Drive</span> <span class="pre">&gt;</span> <span class="pre">Colab</span> <span class="pre">Notebooks</span></code>, and you’re welcome to move it elsewhere.
 This allows you to save and return to the notebook with your edits preserved.</p>
 </section>
 <section id="uploading-and-downloading-data">
 <h3>Uploading and downloading data<a class="headerlink" href="#uploading-and-downloading-data" title="Link to this heading">#</a></h3>
-<p>After you’ve copied the notebook, you can upload any files to your Colab workspace by dragging it into the empty space in the Files tab (📁) on the left side (<a class="reference external" href="https://youtu.be/WrOBVktG1Fs">YouTube tutorial</a>).
+<p>You can upload files to your Colab workspace by dragging them into the empty space in the Files tab (📁) on the left side (<a class="reference external" href="https://youtu.be/WrOBVktG1Fs">YouTube tutorial</a>).
 It will warn you that the file will disappear if the runtime disconnects.
 That’s OK, you can always upload it again.</p>
-<p>If your code generates any files (like a saved PNG image), it will also appear in the sidebar where you can download it to your computer.</p>
+<p>If your code generates any files (like a saved PNG image), it will also appear in this sidebar where you can download it to your computer.</p>
 </section>
 </section>
 <section id="getting-help">
 <h2>Getting help<a class="headerlink" href="#getting-help" title="Link to this heading">#</a></h2>
 <p>We would be remiss not to mention that, in addition to your instructors and peers, generative AI is a great tool to help with generating code, learning its structure/syntax, and debugging!
-You can ask questions about parts that are unclear or directly copy-paste any error messages to help you resolve it.
-Try it for free on the <a class="reference external" href="https://aiplayground-prod.stanford.edu/">Stanford AI Playground</a>!</p>
+You can ask questions about parts that are unclear or directly copy-paste any error messages to help you resolve them.
+In fact, Colab has <a class="reference external" href="https://gemini.google.com/app">Google Gemini</a> integrated to assist with code completion, and you can also try other models for free on the <a class="reference external" href="https://aiplayground-prod.stanford.edu/">Stanford AI Playground</a>.
+We recommend you acknowledge any use of generative AI in accordance with the <a class="reference external" href="https://communitystandards.stanford.edu/generative-ai-policy-guidance">Stanford Honor Code</a>.</p>
 <section id="vibe-coding-and-the-illusion-of-explanatory-depth">
 <h3><a class="reference external" href="https://x.com/karpathy/status/1886192184808149383">Vibe coding</a> and the <a class="reference external" href="https://en.wikipedia.org/wiki/Illusion_of_explanatory_depth">illusion of explanatory depth</a><a class="headerlink" href="#vibe-coding-and-the-illusion-of-explanatory-depth" title="Link to this heading">#</a></h3>
-<p>That being said, you should not be overly dependent on the code that AI produces, at least not to the point where you cannot interpret it and can only hope it is 100% correct.
-It is true that AI will probably get all of the exercises correct and in the future a lot of the code we write will be AI produced.
-But in order to identify errors/gaps and fine tune things—heck, even just being able to <em>read</em> code—requires some fundamental skills on your part, and that’s what we hope these exercise will help you foster.
+<p>That being said, you should not be overly dependent on the code that AI produces, at least not to the point where you cannot interpret it and can only hope it is correct.
+It is true that AI will probably get all of the exercises correct and in the future a lot of the code we write will be AI-generated.
+But in order to identify errors/gaps and fine tune things—heck, even just being able to <em>read</em> code—requires some fundamental skills on your part, and that’s what we hope these exercise will help you develop.
 We encourage you to double check your understanding of every line of code, just so you’re not fooling yourself!</p>
 </section>
 </section>
 <section id="exporting-your-work">
 <h2>Exporting your work<a class="headerlink" href="#exporting-your-work" title="Link to this heading">#</a></h2>
-<p>When you’re ready, the easiest way to export the notebook is to <code class="docutils literal notranslate"><span class="pre">File</span> <span class="pre">&gt;</span> <span class="pre">Print</span></code> it and save it as a PDF.
+<p>When you’re ready to submit, the easiest way to export any notebook is to <code class="docutils literal notranslate"><span class="pre">File</span> <span class="pre">&gt;</span> <span class="pre">Print</span></code> it and save it as a PDF.
 Remove any excessively long, unrelated outputs first by clicking the arrow → next to the output box and then <code class="docutils literal notranslate"><span class="pre">Show/hide</span> <span class="pre">output</span></code>.
 Obviously don’t obscure any necessary output or graphs!</p>
 </section>
@@ -637,16 +641,18 @@ You’re ready to start with <a class="reference internal" href="1_random_demo.h
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#navigating-the-book">Navigating the book</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#interactivity">Interactivity</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#navigating-the-book">Navigating the book</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#why-python">Why Python? 🐍</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#interactivity">Interactivity</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#launching-colab">Launching Colab</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#running-a-jupyter-notebook">Running a Jupyter notebook</a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#markdown-cells">Markdown cells</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#code-cells">Code cells</a></li>
 </ul>
 </li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#saving-your-work">Saving your work</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#saving-your-work-long-term">Saving your work long term</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#uploading-and-downloading-data">Uploading and downloading data</a></li>
 </ul>
 </li>

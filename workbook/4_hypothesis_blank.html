@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
   
@@ -424,7 +424,7 @@ document.write(`
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#part-5">Part 5</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">TODO: Write your explanation below</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#todo-write-your-answer-below">TODO: Write your answer below</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exporting-your-work">Exporting your work</a></li>
@@ -510,7 +510,7 @@ For the paired fuel consumption data provided in the table below, can it be conc
 <p>Suppose that because of the lack of historical data, test engineers are not certain that the fuel consumption in the previous exercise is normally distributed.
 Rather than using a paired <span class="math notranslate nohighlight">\(t\)</span>-test, they are considering using a distribution-free sign test.
 Using the data in the table above, what conclusion is reached at the <span class="math notranslate nohighlight">\(5\%\)</span> significance level?</p>
-<p>Note: There is no built-in Python equivalent for MATLAB’s <a class="reference external" href="https://www.mathworks.com/help/stats/signtest.html"><code class="docutils literal notranslate"><span class="pre">signtest()</span></code></a>, so we have written our own below using <a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.binomtest.html"><code class="docutils literal notranslate"><span class="pre">binomtest()</span></code></a>.</p>
+<p>Note: There is no built-in Python equivalent for MATLAB’s <a class="reference external" href="https://www.mathworks.com/help/stats/signtest.html"><code class="docutils literal notranslate"><span class="pre">signtest()</span></code></a>, so we have written our own below using <a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.binomtest.html"><code class="docutils literal notranslate"><span class="pre">binomtest()</span></code></a>, as the sign test is just a special case (see <a class="reference external" href="https://en.wikipedia.org/wiki/Sign_test">Wikipedia</a>).</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
@@ -562,7 +562,7 @@ Calculate the log-returns for each index and test the hypothesis that the value 
 <p>Notes:</p>
 <ul class="simple">
 <li><p>Remember you can upload data to Colab by dragging it into the 📁 tab (<a class="reference external" href="https://youtu.be/WrOBVktG1Fs">tutorial</a>).</p></li>
-<li><p>You may find adding a <code class="docutils literal notranslate"><span class="pre">delimiter=r&quot;\s+&quot;</span></code> to <a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.read_csv.html"><code class="docutils literal notranslate"><span class="pre">pd.read_csv()</span></code></a> to be very helpful!
+<li><p>You may find adding a <code class="docutils literal notranslate"><span class="pre">delimiter=r&quot;\s+&quot;</span></code> to <a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.read_csv.html"><code class="docutils literal notranslate"><span class="pre">pd.read_csv()</span></code></a> when loading in the data to be very helpful!
 This helps parse extra spaces in the data to give you a neat DataFrame.</p></li>
 </ul>
 <div class="cell docutils container">
@@ -587,7 +587,7 @@ Unknown to the technicians, however, the data of energy savings (in kilowatt-hou
 \[ H_0 : \mu_s - 550 \le \mu_p \qquad \qquad H_1: \mu_s - 550 &gt; \mu_p \]</div>
 <p>Because the alternative hypothesis <span class="math notranslate nohighlight">\(H_1\)</span> is actually true, we would like to know about how many weekly experiments the technicians need to run so that the probability of detection using a one-sided <span class="math notranslate nohighlight">\(t\)</span>-test at the <span class="math notranslate nohighlight">\(5\%\)</span> level of significance is at least <span class="math notranslate nohighlight">\(95\%\)</span>, i.e., the probability of rejecting the null hypothesis is at least <span class="math notranslate nohighlight">\(95\%\)</span>.
 Run <span class="math notranslate nohighlight">\(1000\)</span> one-sided <span class="math notranslate nohighlight">\(t\)</span>-tests over a range of sample sizes to estimate the probability of detection for each sample size and to estimate the required sample size to reject the null hypothesis <span class="math notranslate nohighlight">\(95\%\)</span> of the time.</p>
-<p>Hint: Many of the functions take a <code class="docutils literal notranslate"><span class="pre">size</span></code> or <code class="docutils literal notranslate"><span class="pre">axis</span></code> parameter that allow for efficient vectorized operations to avoid loops.
+<p>Hint: Many of the functions in <code class="docutils literal notranslate"><span class="pre">scipy.stats</span></code> take a <code class="docutils literal notranslate"><span class="pre">size</span></code> or <code class="docutils literal notranslate"><span class="pre">axis</span></code> parameter that allow for efficient vectorized operations to avoid loops.
 But using loops is a totally valid solution.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -596,8 +596,8 @@ But using loops is a totally valid solution.</p>
 </div>
 </div>
 </div>
-<section id="id4">
-<h3>TODO: Write your explanation below<a class="headerlink" href="#id4" title="Link to this heading">#</a></h3>
+<section id="todo-write-your-answer-below">
+<h3>TODO: Write your answer below<a class="headerlink" href="#todo-write-your-answer-below" title="Link to this heading">#</a></h3>
 </section>
 </section>
 <section id="exporting-your-work">
@@ -689,7 +689,7 @@ Obviously don’t obscure any necessary output or graphs!</p>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#part-5">Part 5</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">TODO: Write your explanation below</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#todo-write-your-answer-below">TODO: Write your answer below</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exporting-your-work">Exporting your work</a></li>
