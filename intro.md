@@ -10,9 +10,9 @@ Please fill out [this anonymous form](https://forms.gle/XVnLFdrB2U7gUMNW6) (requ
 ````
 
 
-This Jupyter Book contains a series of Python exercises aimed at introducing you to scientific computing in the context of [CME 106: Introduction to Probability and Statistics for Engineers](https://explorecourses.stanford.edu/search?q=cme106+statistics) at [Stanford University](https://www.stanford.edu/).
+This Jupyter Book contains a series of Python exercises aimed at introducing students to scientific computing in the context of [CME 106: Introduction to Probability and Statistics for Engineers](https://explorecourses.stanford.edu/search?q=cme106+statistics) at [Stanford University](https://www.stanford.edu/).
 The exercises are adapted from the MATLAB Workbook by [Vadim Khayms](https://icme.stanford.edu/people/vadim-khayms), Senior Lecturer in Mechanical Engineering, and created by [Enze Chen](https://mse.stanford.edu/people/enze-chen), Lecturer in Materials Science and Engineering.
-We hope students will find these exercises useful in their studies!
+We hope you will find these exercises useful for your studies!
 
 
 ```{admonition} Important note for students
@@ -35,8 +35,8 @@ If you like the sound of this, keep reading the [](workbook/0_usage.ipynb) for i
 ### Does it _really_ not matter which language I learn?
 
 Pretty much. 
-In the context of the course, **homeworks and tutorials will still be given in MATLAB** as we experiment with the transition to Python, but the underlying computing principles and [computational thinking](https://en.wikipedia.org/wiki/Computational_thinking) are the same.
-Sure, certain tasks may be easier in one language than the other as they were developed by different scientific communities, but we anticipate that learning one will serve as a solid foundation so you can easily transition to another programming language in your future work.
+In the context of the course, <span style="font-weight:500">homeworks and tutorials will still be given in MATLAB</span> as we experiment with the transition to Python, but the underlying computing principles and [computational thinking](https://en.wikipedia.org/wiki/Computational_thinking) are the same.
+Sure, certain tasks may be easier in one language than in the other as they were developed by different scientific communities, but we anticipate that learning one will serve as a solid foundation so you can easily transition to another programming language in your future work.
 
 However, if you strongly prefer to optimize your choice of programming language, we suggest you talk to your friends, (intended) major department, and professionals in your field to understand which programming language you're more likely to encounter in the future.
 

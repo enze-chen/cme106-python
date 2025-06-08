@@ -3,7 +3,7 @@ title                     : CME 106 Python Workbook
 author                    : Enze Chen and Vadim Khayms
 copyright                 : "2025"
 logo                      : assets/fig/icme-logo.png  # logo in top-left corner
-exclude_patterns          : ["README.md", Thumbs.db, .DS_Store, "**.ipynb_checkpoints", "**_master.ipynb"]
+exclude_patterns          : ["README.md", Thumbs.db, .DS_Store, "**.ipynb_checkpoints", "**_solu.ipynb"]
 only_build_toc_files      : true      # whether to ignore the extra files
 
 
@@ -69,7 +69,7 @@ latex:
   latex_engine            : pdflatex
   latex_documents:
     targetname            : book.tex
-bibtex_bibfiles           : ["assets/references.bib"]
+# bibtex_bibfiles           : ["assets/references.bib"]
 
 
 #######################################################################################

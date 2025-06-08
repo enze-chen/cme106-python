@@ -1,4 +1,5 @@
 # cme106-python
+
 Python version of MATLAB exercises for CME 106 at Stanford University.
 
 Access it through our [Jupyter Book](https://enze-chen.github.io/cme106-python/)!
@@ -23,4 +24,3 @@ python convert_pdf.py {path_to_solution_notebooks} -n {merged_pdf_name.pdf}
 
 [cc-by-nc]: http://creativecommons.org/licenses/by-nc/4.0/
 [cc-by-nc-image]: https://licensebuttons.net/l/by-nc/4.0/88x31.png
-
