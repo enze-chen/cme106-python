@@ -524,8 +524,15 @@ The data collected is shown in the table below (current in amperes and voltage i
 <section id="part-a">
 <h3>Part (a)<a class="headerlink" href="#part-a" title="Link to this heading">#</a></h3>
 <p>For each value of the temperature, plot on the same set of axes a linear curve fit of the voltage versus current through the thermistor and separately a calibration curve (resistance versus temperature).</p>
-<p>Note the coefficients that are returned from <code class="docutils literal notranslate"><span class="pre">np.polyfit()</span></code> always correspond to <em>decreasing powers</em> of <span class="math notranslate nohighlight">\(x\)</span>.
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>The coefficients that are returned from <code class="docutils literal notranslate"><span class="pre">np.polyfit()</span></code> always correspond to <em>decreasing powers</em> of <span class="math notranslate nohighlight">\(x\)</span>.
 So for the function <span class="math notranslate nohighlight">\(y = ax^2 + bx + c\)</span>, the returned coefficients <span class="math notranslate nohighlight">\(\vec{p} = \begin{bmatrix} p_0 &amp; p_1 &amp; p_2 \end{bmatrix}\)</span> correspond to <span class="math notranslate nohighlight">\(p_0 = a\)</span>, <span class="math notranslate nohighlight">\(p_1 = b\)</span>, and <span class="math notranslate nohighlight">\(p_2 = c\)</span>.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Notice how <code class="docutils literal notranslate"><span class="pre">label=</span></code> in the plotting function and <code class="docutils literal notranslate"><span class="pre">ax.legend()</span></code> work together to label different lines!</p>
+</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># import libraries</span>
