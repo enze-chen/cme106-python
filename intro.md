@@ -15,11 +15,10 @@ The exercises are adapted by [Enze Chen](https://mse.stanford.edu/people/enze-ch
 We hope you will find these exercises useful for your studies!
 
 
-```{admonition} Important note for students
+```{admonition} Note for students
 :class: note
-If you're submitting work for credit, you only have to submit **one of** the MATLAB _or_ Python exercises.
-You will not be rewarded for both, though you're welcome to do both for practice.
 These pages only have Python, corresponding to the exercises in the original MATLAB Workbook.
+If you're looking for the MATLAB exercises, see the document provided in class.
 ```
 
 
@@ -35,7 +34,7 @@ If you like the sound of this, keep reading the [](workbook/0_usage.ipynb) for i
 ### Does it _really_ not matter which language I learn?
 
 Pretty much. 
-In the context of the course, <span style="font-weight:500">homeworks and tutorials will still be given in MATLAB</span> as we experiment with the transition to Python, but the underlying computing principles and [computational thinking](https://en.wikipedia.org/wiki/Computational_thinking) are the same.
+In the context of the course, <span style="font-weight:500">homeworks and tutorials will still require MATLAB</span> as we experiment with the transition to Python, but the underlying computing principles and [computational thinking](https://en.wikipedia.org/wiki/Computational_thinking) are the same.
 Sure, certain tasks may be easier in one language than in the other as they were developed by different scientific communities, but we anticipate that learning one will serve as a solid foundation so you can easily transition to another programming language in your future work.
 
 However, if you strongly prefer to optimize your choice of programming language, we suggest you talk to your friends, (intended) major department, and professionals in your field to understand which programming language you're more likely to encounter in the future.
