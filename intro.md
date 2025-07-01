@@ -31,7 +31,7 @@ Nothing! Unlike the MATLAB exercises, we'll be doing everything in the cloud.
 If you like the sound of this, keep reading the [](workbook/0_usage.ipynb) for instructions on how to complete and submit your work.
 
 
-### Does it _really_ not matter which language I learn?
+<!-- ### Does it _really_ not matter which language I learn?
 
 Pretty much. 
 In the context of the course, <span style="font-weight:500">homeworks and tutorials will still require MATLAB</span> as we experiment with the transition to Python, but the underlying computing principles and [computational thinking](https://en.wikipedia.org/wiki/Computational_thinking) are the same.
@@ -41,9 +41,9 @@ However, if you strongly prefer to optimize your choice of programming language,
 
 
 
-<!-- ## Table of contents
+ ## Table of contents
 
 ```{tableofcontents}
 ``` 
-https://fontawesome.com/search?o=r&s=solid&ip=classic
--->
+https://fontawesome.com/search?o=r&s=solid&ip=classic -->
+
