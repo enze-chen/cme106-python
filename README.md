@@ -1,4 +1,7 @@
-# cme106-python
+# CME 106 Python Workbook
+
+© [Enze Chen](https://mse.stanford.edu/people/enze-chen), 
+[Vadim Khayms](https://icme.stanford.edu/people/vadim-khayms)
 
 Python version of MATLAB exercises for CME 106 at Stanford University.
 
