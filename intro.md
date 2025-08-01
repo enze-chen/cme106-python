@@ -11,8 +11,17 @@ Please fill out [this anonymous form](https://forms.gle/XVnLFdrB2U7gUMNW6) (requ
 
 
 This Jupyter Book contains a series of Python exercises aimed at introducing students to scientific computing in the context of [CME 106: Introduction to Probability and Statistics for Engineers](https://explorecourses.stanford.edu/search?q=cme106+statistics) at [Stanford University](https://www.stanford.edu/).
-The exercises are adapted by [Enze Chen](https://mse.stanford.edu/people/enze-chen), Lecturer in Materials Science and Engineering, from the MATLAB Workbook created by [Vadim Khayms](https://icme.stanford.edu/people/vadim-khayms), Senior Lecturer in Mechanical Engineering.
+The exercises are adapted by [Enze Chen](https://mse.stanford.edu/people/enze-chen), Lecturer in [Materials Science and Engineering](https://mse.stanford.edu/), from the MATLAB Workbook created by [Vadim Khayms](https://icme.stanford.edu/people/vadim-khayms), Senior Lecturer in Mechanical Engineering.
 We hope you will find these exercises useful for your studies!
+
+
+````{margin}
+```{admonition} Writing your own code?
+:class: tip
+If you choose to use Python on the homework, we don't have any templates, but you can easily open a blank Colab notebook (or make a copy of the workbook page), and write your solution there!
+Avoids the hassle of managing your local installation.
+```
+````
 
 
 ```{admonition} Note for students
@@ -20,7 +29,6 @@ We hope you will find these exercises useful for your studies!
 These pages only have Python, corresponding to the exercises in the original MATLAB Workbook.
 If you're looking for the MATLAB exercises, see the document provided in class.
 ```
-
 
 
 ## Other FAQs
@@ -31,17 +39,21 @@ Nothing! Unlike the MATLAB exercises, we'll be doing everything in the cloud.
 If you like the sound of this, keep reading the [](workbook/0_usage.ipynb) for instructions on how to complete and submit your work.
 
 
-<!-- ### Does it _really_ not matter which language I learn?
+### Does it matter which language I learn?
 
-Pretty much. 
-In the context of the course, <span style="font-weight:500">homeworks and tutorials will still require MATLAB</span> as we experiment with the transition to Python, but the underlying computing principles and [computational thinking](https://en.wikipedia.org/wiki/Computational_thinking) are the same.
-Sure, certain tasks may be easier in one language than in the other as they were developed by different scientific communities, but we anticipate that learning one will serve as a solid foundation so you can easily transition to another programming language in your future work.
+Not particularly, as the underlying computing principles and [computational thinking](https://en.wikipedia.org/wiki/Computational_thinking) are the same.
+Sure, certain tasks may be easier in one language than in the other as they were developed by different scientific communities, but we anticipate that learning one will serve as a solid foundation for learning all others in your future work.
 
-However, if you strongly prefer to optimize your choice of programming language, we suggest you talk to your friends, (intended) major department, and professionals in your field to understand which programming language you're more likely to encounter in the future.
-
+However, if you strongly prefer to optimize your choice of programming language, we suggest you talk to your friends, major department, and professionals in your field to understand which programming language you're more likely to encounter in the future.
 
 
- ## Table of contents
+### What if I didn't take previous CME courses with Python?
+
+That's OK!
+We prepared a {doc}`tutorials/1_fund-python_blank` notebook that scaffolds some introductory Python exercises, and you can also find the entire [CME 100 Python workbook](https://enze-chen.github.io/cme100-python/intro.html) online.
+However, it's likely that by the time you're taking this course, you will have already seen many examples in your other work that can transfer to these Python-based calculations.
+
+<!--  ## Table of contents
 
 ```{tableofcontents}
 ``` 
