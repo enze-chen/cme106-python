@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
   
@@ -405,10 +405,7 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#navigating-the-book">Navigating the book</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#why-python">Why Python? 🐍</a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#navigating-the-book">Navigating the book</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#interactivity">Interactivity</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#launching-colab">Launching Colab</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#running-a-jupyter-notebook">Running a Jupyter notebook</a><ul class="nav section-nav flex-column">
@@ -452,26 +449,6 @@ Even though there's no Jupyter Book for your homework, you can always create a n
 ```` -->
 <p>Note that ordinarily, to run Python on your computer requires installing a Python interpreter, a bunch of extra packages, and a text editor or an integrated development environment (IDE) to work in.
 This can be complicated, so instead we’re going to run everything in the cloud using <a class="reference external" href="https://colab.google/">Google Colaboratory (Colab)</a>!</p>
-<aside class="sidebar">
-<p class="sidebar-title">The wonders of Python</p>
-<figure class="align-center" id="id1">
-<a class="reference internal image-reference" href="../_images/python_xkcd.png"><img alt="python_xkcd" src="../_images/python_xkcd.png" style="width: 100%;" />
-</a>
-<figcaption>
-<p><span class="caption-number">Fig. 1 </span><span class="caption-text"><a class="reference external" href="https://xkcd.com/353/">xkcd 353</a>.</span><a class="headerlink" href="#id1" title="Link to this image">#</a></p>
-</figcaption>
-</figure>
-</aside>
-<section id="why-python">
-<h3>Why Python? 🐍<a class="headerlink" href="#why-python" title="Link to this heading">#</a></h3>
-<p>There are many programming languages one can choose from, and we are teaching Python as it has <a class="reference external" href="https://stackoverflow.blog/2017/09/06/incredible-growth-python/">skyrocketed in popularity</a> in recent years.
-This growth is in part due to:</p>
-<ol class="arabic simple">
-<li><p>Its <em>readability</em>. Python is designed to be simple and <a class="reference external" href="https://programmerhumor.io/python-memes/pythonisenglish/">reads like English</a>.</p></li>
-<li><p>Its <em>extensibility</em>. Python makes it easy for engineers to write modules that extend its functionalities for applications in <a class="reference external" href="https://wesmckinney.com/book/">data science</a>, <a class="reference external" href="https://www.nature.com/articles/s41586-020-2649-2">scientific computing</a>, and <a class="reference external" href="https://x.com/ThePSF/status/1362516507918483458">flying drones on Mars</a>.</p></li>
-<li><p>Its <em>open-source</em> properties. This means anyone can contribute to Python development and anyone can use it—for free!</p></li>
-</ol>
-</section>
 </section>
 <section id="interactivity">
 <h2>Interactivity<a class="headerlink" href="#interactivity" title="Link to this heading">#</a></h2>
@@ -545,6 +522,7 @@ This allows you to save and return to the notebook with your edits preserved.</p
 <section id="uploading-and-downloading-data">
 <h3>Uploading and downloading data<a class="headerlink" href="#uploading-and-downloading-data" title="Link to this heading">#</a></h3>
 <p>You can upload files to your Colab workspace by dragging them into the empty space in the Files tab (📁) on the left side (<a class="reference external" href="https://youtu.be/WrOBVktG1Fs">YouTube tutorial</a>).
+This will allow you to read external data files such as <code class="docutils literal notranslate"><span class="pre">.csv</span></code> and <code class="docutils literal notranslate"><span class="pre">.txt</span></code> when solving problems.
 It will warn you that the file will disappear if the runtime disconnects.
 That’s OK, you can always upload it again.</p>
 <p>If your code generates any files (like a saved PNG image), it will also appear in this sidebar where you can download it to your computer.</p>
@@ -561,7 +539,7 @@ We recommend you acknowledge any use of generative AI in accordance with the <a 
 <p>That being said, you should not be overly dependent on the code that AI produces, at least not to the point where you cannot interpret it and can only hope it is correct.
 It is true that AI will probably get all of the exercises correct and in the future a lot of the code we write will be AI-generated.
 But in order to identify errors/gaps and fine tune things—heck, even just being able to <em>read</em> code—requires some fundamental skills on your part, and that’s what we hope these exercise will help you develop.
-We encourage you to double check your understanding of every line of code, just so you’re not fooling yourself!</p>
+We encourage you to <strong>double check your understanding of every line of code</strong>, just so you’re not fooling yourself!</p>
 </section>
 </section>
 <section id="exporting-your-work">
@@ -641,10 +619,7 @@ You’re ready to start with <a class="reference internal" href="1_random_demo.h
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#navigating-the-book">Navigating the book</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#why-python">Why Python? 🐍</a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#navigating-the-book">Navigating the book</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#interactivity">Interactivity</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#launching-colab">Launching Colab</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#running-a-jupyter-notebook">Running a Jupyter notebook</a><ul class="nav section-nav flex-column">
