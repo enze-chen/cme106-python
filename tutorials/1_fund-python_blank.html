@@ -65,6 +65,7 @@
     <link rel="icon" href="../_static/stanford-s.png"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Homework XX, Problem YY" href="homework_template.html" />
     <link rel="prev" title="Regression and correlation analyses - Your turn" href="../workbook/5_regression_blank.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -212,6 +213,7 @@
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Appendix</span></p>
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Python fundamentals</a></li>
+<li class="toctree-l1"><a class="reference internal" href="homework_template.html">Homework template</a></li>
 </ul>
 
     </div>
@@ -424,6 +426,7 @@ document.write(`
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Your turn</a></li>
 </ul>
 </li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#user-defined-functions">User-defined functions</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#scientific-computing-with-numpy">3. Scientific computing with NumPy</a><ul class="nav section-nav flex-column">
@@ -897,8 +900,60 @@ Print odd numbers as they are and print the negative value for even numbers.</p>
 </div>
 </div>
 </div>
-<hr class="docutils" />
 </section>
+</section>
+<section id="user-defined-functions">
+<h3>User-defined functions<a class="headerlink" href="#user-defined-functions" title="Link to this heading">#</a></h3>
+<p>Sometimes, writing your own functions can be helpful for solving problems, and we will practice this in the context of applying statistical methods.
+In CS 106A and other contexts, this technique is called <em>decomposition</em> and makes your code more readable, extensible, and often more efficient.</p>
+<p>In Python, the syntax for defining your own function is:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">my_func_name</span><span class="p">(</span><span class="n">arg1</span><span class="p">,</span> <span class="n">arg2</span><span class="p">,</span> <span class="o">...</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot; optional docstring to explain purpose, arguments, etc. &quot;&quot;&quot;</span>
+    <span class="n">do</span> <span class="n">something</span>
+    <span class="k">return</span> <span class="n">something</span>   <span class="c1"># optional</span>
+
+<span class="n">my_func_name</span><span class="p">(</span><span class="n">args</span><span class="p">)</span>     <span class="c1"># calling the function</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>The <code class="docutils literal notranslate"><span class="pre">def</span></code> at the start is required, as is the colon at the end of the first line.</p></li>
+<li><p>Just like variables, function names should be descriptive.</p></li>
+<li><p>Arguments are optional, but you’ll probably have some input variables.</p></li>
+<li><p>Docstrings are optional but very nice to have (for others and future you). No need though if the function is very simple.</p></li>
+<li><p>Variables defined in the function body (including arguments) have local scope, i.e., they don’t exist outside the function.</p></li>
+<li><p>Returning a value is generally optional, but you’ll probably have something.</p></li>
+<li><p>Calling the function works as with any other built-in function.</p></li>
+</ul>
+<p>Below we give a short example:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">square_input</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot; Takes an input and squares it. &quot;&quot;&quot;</span>
+    <span class="n">local_scope</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">return</span> <span class="n">x</span> <span class="o">**</span> <span class="mi">2</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">square_input</span><span class="p">(</span><span class="mi">5</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">local_scope</span><span class="p">)</span>    <span class="c1"># errors!</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>25
+</pre></div>
+</div>
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">22</span><span class="p">],</span> <span class="n">line</span> <span class="mi">7</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span>     <span class="k">return</span> <span class="n">x</span> <span class="o">**</span> <span class="mi">2</span>
+<span class="g g-Whitespace">      </span><span class="mi">6</span> <span class="nb">print</span><span class="p">(</span><span class="n">square_input</span><span class="p">(</span><span class="mi">5</span><span class="p">))</span>
+<span class="ne">----&gt; </span><span class="mi">7</span> <span class="nb">print</span><span class="p">(</span><span class="n">local_scope</span><span class="p">)</span>
+
+<span class="ne">NameError</span>: name &#39;local_scope&#39; is not defined
+</pre></div>
+</div>
+</div>
+</div>
+<hr class="docutils" />
 </section>
 </section>
 <section id="scientific-computing-with-numpy">
@@ -1181,7 +1236,7 @@ Using the same operators could generate errors or incorrect behavior.</p>
 </div>
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">31</span><span class="p">],</span> <span class="n">line</span> <span class="mi">11</span>
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">32</span><span class="p">],</span> <span class="n">line</span> <span class="mi">11</span>
 <span class="g g-Whitespace">      </span><span class="mi">8</span> <span class="nb">print</span><span class="p">(</span><span class="n">zl</span><span class="p">)</span>
 <span class="g g-Whitespace">     </span><span class="mi">10</span> <span class="c1"># try multiplying them</span>
 <span class="ne">---&gt; </span><span class="mi">11</span> <span class="nb">print</span><span class="p">(</span><span class="n">xl</span> <span class="o">*</span> <span class="n">yl</span><span class="p">)</span>
@@ -1346,6 +1401,15 @@ If something is confusing, you can look it up on Google (some popular sites for 
         <p class="prev-next-title">Regression and correlation analyses - Your turn</p>
       </div>
     </a>
+    <a class="right-next"
+       href="homework_template.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Homework XX, Problem YY</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
 </div>
                 </footer>
               
@@ -1380,6 +1444,7 @@ If something is confusing, you can look it up on Google (some popular sites for 
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Your turn</a></li>
 </ul>
 </li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#user-defined-functions">User-defined functions</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#scientific-computing-with-numpy">3. Scientific computing with NumPy</a><ul class="nav section-nav flex-column">
