@@ -37,3 +37,5 @@ parts:
     numbered: false
     chapters:
     - file: tutorials/1_fund-python_blank
+    - file: tutorials/homework_template
+      title: Homework template
